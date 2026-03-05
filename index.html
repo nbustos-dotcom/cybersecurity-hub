@@ -8,148 +8,445 @@
   <title>Cybersecurity Hub | Free Learning Resources</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; }
-    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { color: #58a6ff; font-size: 1.5rem; }
-    header span { color: #8b949e; font-size: 0.9rem; }
-    .hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); padding: 80px 40px; text-align: center; border-bottom: 1px solid #30363d; }
-    .hero h2 { font-size: 2.5rem; color: #ffffff; margin-bottom: 16px; }
-    .hero p { font-size: 1.1rem; color: #8b949e; max-width: 600px; margin: 0 auto 32px; }
-    .hero a { background: #238636; color: white; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 0 8px; }
-    .hero a.secondary { background: #21262d; border: 1px solid #30363d; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0e1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #0d1117;
+      border-bottom: 1px solid #30363d;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left h1 { color: #58a6ff; font-size: 1.3rem; }
+    .header-left span {
+      color: #8b949e;
+      font-size: 0.8rem;
+      border-left: 1px solid #30363d;
+      padding-left: 12px;
+    }
+    nav { display: flex; gap: 24px; }
+    nav a {
+      color: #8b949e;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #58a6ff; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%);
+      padding: 100px 40px;
+      text-align: center;
+      border-bottom: 1px solid #30363d;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(88,166,255,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(88,166,255,0.1);
+      border: 1px solid rgba(88,166,255,0.3);
+      color: #58a6ff;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      color: #ffffff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .hero h2 span { color: #58a6ff; }
+    .hero p {
+      font-size: 1.1rem;
+      color: #8b949e;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #238636;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #2ea043; }
+    .btn-secondary {
+      background: transparent;
+      color: #58a6ff;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid #58a6ff;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(88,166,255,0.1); }
+
+    /* STATS BAR */
+    .stats {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat .number { font-size: 1.5rem; font-weight: 700; color: #58a6ff; }
+    .stat .label { font-size: 0.8rem; color: #8b949e; margin-top: 2px; }
+
+    /* CONTAINER */
     .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
-    .section-title { font-size: 1.5rem; color: #ffffff; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
-    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; transition: border-color 0.2s; }
-    .card:hover { border-color: #58a6ff; }
-    .card .tag { background: #1f6feb; color: #ffffff; font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; display: inline-block; margin-bottom: 12px; }
-    .card h3 { color: #ffffff; margin-bottom: 8px; font-size: 1.1rem; }
-    .card p { color: #8b949e; font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
-    .card a { color: #58a6ff; text-decoration: none; font-size: 0.9rem; }
-    .card a:hover { text-decoration: underline; }
-    .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 60px; }
-    .tool { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; text-align: center; }
-    .tool h4 { color: #ffffff; margin-bottom: 8px; }
-    .tool p { color: #8b949e; font-size: 0.85rem; margin-bottom: 12px; }
-    .tool a { background: #238636; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; }
-    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #30363d;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ARTICLE CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 70px;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+    }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tag-comparison { background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .tag-tutorial { background: rgba(35,134,54,0.15); color: #3fb950; }
+    .tag-career { background: rgba(210,153,34,0.15); color: #d2991a; }
+    .tag-certification { background: rgba(188,77,252,0.15); color: #bc4dfc; }
+    .tag-ctf { background: rgba(248,81,73,0.15); color: #f85149; }
+    .tag-resources { background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .tag-beginner { background: rgba(35,134,54,0.15); color: #3fb950; }
+    .tag-lab { background: rgba(210,153,34,0.15); color: #d2991a; }
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+    .card p {
+      color: #8b949e;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .card a.read-more {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+    }
+    .card a.read-more:hover { text-decoration: underline; }
+
+    /* TOOLS */
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 70px;
+    }
+    .tool {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tool:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+    }
+    .tool-icon { font-size: 2rem; margin-bottom: 12px; }
+    .tool h4 { color: #ffffff; margin-bottom: 8px; font-size: 1rem; }
+    .tool p { color: #8b949e; font-size: 0.85rem; margin-bottom: 16px; line-height: 1.5; }
+    .tool a {
+      background: #238636;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .tool a:hover { background: #2ea043; }
+
+    /* FOOTER */
+    footer {
+      background: #0d1117;
+      border-top: 1px solid #30363d;
+      padding: 40px;
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.85rem;
+    }
+    footer .footer-brand {
+      color: #58a6ff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
     footer a { color: #58a6ff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header { padding: 0 20px; }
+      .header-left span { display: none; }
+      .hero { padding: 60px 20px; }
+      .hero h2 { font-size: 2rem; }
+      .container { padding: 40px 20px; }
+      .stats { gap: 30px; }
+    }
   </style>
 </head>
 <body>
+
+<!-- HEADER -->
 <header>
-  <h1>🛡️ Cybersecurity Hub</h1>
- <span>Free resources for security learners</span>
-  <nav style="display: flex; gap: 20px;">
-    <a href="index.html" style="color: #8b949e; text-decoration: none; font-size: 0.9rem;">Home</a>
-    <a href="about" style="color: #8b949e; text-decoration: none; font-size: 0.9rem;">About</a>
+  <div class="header-left">
+    <h1>🛡️ Cybersecurity Hub</h1>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about">About</a>
   </nav>
 </header>
+
+<!-- HERO -->
 <div class="hero">
-  <h2>Learn Cybersecurity for Free</h2>
-  <p>Honest guides, tool comparisons, and lab walkthroughs from real CTF and TryHackMe experience.</p>
-  <a href="tryhackme-vs-hackthebox.html">Start Reading</a>
-  <a href="#tools" class="secondary">Browse Tools</a>
+  <div class="hero-badge">🎓 Written by a Michigan Tech CS Student</div>
+  <h2>Learn <span>Cybersecurity</span><br>for Free</h2>
+  <p>Honest guides, tool comparisons, and lab walkthroughs from real TryHackMe and CTF experience.</p>
+  <div class="hero-buttons">
+    <a href="how-to-get-into-cybersecurity" class="btn-primary">Start Learning →</a>
+    <a href="#tools" class="btn-secondary">Browse Tools</a>
+  </div>
 </div>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stat">
+    <div class="number">10</div>
+    <div class="label">Free Articles</div>
+  </div>
+  <div class="stat">
+    <div class="number">100%</div>
+    <div class="label">Free Resources</div>
+  </div>
+  <div class="stat">
+    <div class="number">4</div>
+    <div class="label">Recommended Tools</div>
+  </div>
+  <div class="stat">
+    <div class="number">0</div>
+    <div class="label">Paywalls</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
 <div class="container">
+
   <h2 class="section-title">📚 Latest Articles</h2>
   <div class="cards">
 
     <!-- ADD NEW ARTICLE CARDS HERE — paste new card blocks below this line -->
 
     <div class="card">
-      <span class="tag">Career</span>
+      <div class="card-top"><span class="tag tag-career">Career</span></div>
       <h3>SOC Analyst vs Penetration Tester: Which Path in 2026?</h3>
       <p>Honest comparison of the two most popular cybersecurity career paths. Salaries, skills, and which to choose.</p>
-      <a href="cybersecurity-career-paths">Read article →</a>
+      <a href="cybersecurity-career-paths" class="read-more">Read article →</a>
     </div>
 
     <div class="card">
-      <span class="tag">Tutorial</span>
+      <div class="card-top"><span class="tag tag-tutorial">Tutorial</span></div>
       <h3>Burp Suite Beginner Guide: Web App Hacking in 2026</h3>
-      <p>How to use Burp Suite Community Edition for web app testing. Used it myself on TryHackMe rooms.</p>
-      <a href="burp-suite-beginner-guide">Read article →</a>
+      <p>How to use Burp Suite Community Edition for web app testing. Covers Proxy, Repeater, and Intruder.</p>
+      <a href="burp-suite-beginner-guide" class="read-more">Read article →</a>
     </div>
 
     <div class="card">
-      <span class="tag">CTF</span>
+      <div class="card-top"><span class="tag tag-ctf">CTF</span></div>
       <h3>Top 10 CTF Platforms for Beginners in 2026</h3>
       <p>The best free platforms to practice hacking legally. Ranked by a CS student who's used them all.</p>
-      <a href="best-ctf-platforms">Read article →</a>
+      <a href="best-ctf-platforms" class="read-more">Read article →</a>
     </div>
 
-    
     <div class="card">
-      <span class="tag">Certification</span>
+      <div class="card-top"><span class="tag tag-certification">Certification</span></div>
       <h3>CompTIA Security+ Study Guide: Pass for Free in 2026</h3>
       <p>The complete free study plan for Security+ from a CS student. No expensive courses needed.</p>
-      <a href="comptia-security-plus-study-guide">Read article →</a>
+      <a href="comptia-security-plus-study-guide" class="read-more">Read article →</a>
     </div>
-    
+
     <div class="card">
-      <span class="tag">Comparison</span>
-      <h3>TryHackMe vs HackTheBox 2026</h3>
-      <p>Honest comparison of both platforms from real lab experience. Which one is right for your level?</p>
-      <a href="tryhackme-vs-hackthebox.html">Read article →</a>
-    </div>
-    <div class="card">
-      <span class="tag">Beginner Guide</span>
-      <h3>How to Get Into Cybersecurity in 2026</h3>
-      <p>Complete beginner roadmap. Self-taught path from zero to job-ready with free resources.</p>
-      <a href="how-to-get-into-cybersecurity">Read article →</a>
-    </div>
-    <div class="card">
-      <span class="tag">Resources</span>
-      <h3>Best Free Cybersecurity Courses in 2026</h3>
-      <p>Ranked by a CS student at Michigan Tech. What actually works and what's a waste of time.</p>
-      <a href="best-free-cybersecurity-courses">Read article →</a>
-    </div>
-  <div class="card">
-      <span class="tag">Tutorial</span>
-      <h3>Nmap Beginner Guide: Most Important Commands 2026</h3>
-      <p>The exact Nmap commands I use on every TryHackMe machine. Includes a cheat sheet.</p>
-      <a href="nmap-beginner-guide">Read article →</a>
-    </div>
-  <div class="card">
-      <span class="tag">Tutorial</span>
-      <h3>Linux Commands Every Hacker Should Know</h3>
-      <p>The 20 Linux commands that cover 80% of what you need for CTFs and pentesting. Includes cheat sheet.</p>
-      <a href="linux-commands-for-hackers">Read article →</a>
-    </div>
-  <div class="card">
-      <span class="tag">Lab Setup</span>
+      <div class="card-top"><span class="tag tag-lab">Lab Setup</span></div>
       <h3>How to Set Up a Free Pentest Lab in 2026</h3>
       <p>Step by step guide to building a free local lab on Windows using VirtualBox and Kali Linux.</p>
-      <a href="free-pentest-lab-setup">Read article →</a>
+      <a href="free-pentest-lab-setup" class="read-more">Read article →</a>
     </div>
+
+    <div class="card">
+      <div class="card-top"><span class="tag tag-tutorial">Tutorial</span></div>
+      <h3>Linux Commands Every Hacker Should Know</h3>
+      <p>The 20 Linux commands that cover 80% of what you need for CTFs and pentesting. Includes cheat sheet.</p>
+      <a href="linux-commands-for-hackers" class="read-more">Read article →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="tag tag-tutorial">Tutorial</span></div>
+      <h3>Nmap Beginner Guide: Most Important Commands 2026</h3>
+      <p>The exact Nmap commands used on every TryHackMe machine. Includes a full cheat sheet.</p>
+      <a href="nmap-beginner-guide" class="read-more">Read article →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="tag tag-resources">Resources</span></div>
+      <h3>Best Free Cybersecurity Courses in 2026</h3>
+      <p>Ranked by a CS student at Michigan Tech. What actually works and what's a waste of time.</p>
+      <a href="best-free-cybersecurity-courses" class="read-more">Read article →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="tag tag-beginner">Beginner Guide</span></div>
+      <h3>How to Get Into Cybersecurity in 2026</h3>
+      <p>Complete beginner roadmap. Self-taught path from zero to job-ready with free resources.</p>
+      <a href="how-to-get-into-cybersecurity" class="read-more">Read article →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="tag tag-comparison">Comparison</span></div>
+      <h3>TryHackMe vs HackTheBox: Honest Comparison 2026</h3>
+      <p>Tested both platforms extensively. Which one is right for your experience level?</p>
+      <a href="tryhackme-vs-hackthebox" class="read-more">Read article →</a>
+    </div>
+
   </div>
+
+  <!-- TOOLS SECTION -->
   <h2 class="section-title" id="tools">🔧 Recommended Tools & Platforms</h2>
   <div class="tools">
+
     <div class="tool">
+      <div class="tool-icon">🎯</div>
       <h4>TryHackMe</h4>
-      <p>Best platform for beginners. Guided rooms and learning paths.</p>
+      <p>Best platform for beginners. Guided rooms and structured learning paths.</p>
       <a href="https://tryhackme.com" target="_blank">Try Free</a>
     </div>
+
     <div class="tool">
+      <div class="tool-icon">📦</div>
       <h4>HackTheBox</h4>
-      <p>Realistic machines for intermediate learners. Great for OSCP prep.</p>
+      <p>Realistic machines for intermediate learners. Essential for OSCP prep.</p>
       <a href="https://hackthebox.com" target="_blank">Try Free</a>
     </div>
+
     <div class="tool">
+      <div class="tool-icon">☁️</div>
       <h4>DigitalOcean</h4>
-      <p>Best VPS for pentest labs. $200 free credits for new users.</p>
+      <p>Best VPS for pentest labs. New users get $200 in free credits.</p>
       <a href="https://m.do.co/c/a2644c2e88b4" target="_blank">Get $200 Free</a>
     </div>
+
     <div class="tool">
+      <div class="tool-icon">🌐</div>
       <h4>Namecheap</h4>
-      <p>Cheapest domains for your lab and portfolio sites.</p>
+      <p>Cheapest domains for your lab and portfolio sites. Starting at $1.</p>
       <a href="https://namecheap.com" target="_blank">Get a Domain</a>
     </div>
+
   </div>
+
 </div>
+
+<!-- FOOTER -->
 <footer>
-  <p>Built for the cybersecurity community. All tools tested personally in lab environments.</p>
-  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no cost to you.</p>
+  <div class="footer-brand">🛡️ Cybersecurity Hub</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about">About</a>
+    <a href="how-to-get-into-cybersecurity">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
 </footer>
+
 </body>
 </html>
