@@ -1,6 +1,6 @@
 # Best Free Cybersecurity Courses in 2026 (Ranked by a CS Student)
 
-I'm a Computer Science student at Michigan Tech with a cybersecurity minor,
+I'm a Computer Science student at Michigan Tech with a Strong interest in cybersecurity,
 and I also self-study outside of class. I've gone through dozens of free
 cybersecurity resources — here's what actually works and what's a waste
 of time.
@@ -147,9 +147,6 @@ The only thing that separates people who make it from those who don't is
 showing up every day — even if it's just 30 minutes.
 
 ---
-*Written by a CS student at Michigan Tech with a cybersecurity minor.
-Some links are affiliate links which help support this site at no cost
-to you.*
-*Written by a CS student at Michigan Tech with a cybersecurity minor.
+*Written by a CS student at Michigan Tech with a Strong interest in cybersecurity.
 Some links are affiliate links which help support this site at no cost
 to you.*
