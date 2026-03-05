@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Cybersecurity Hub — written by a CS freshman at Michigan Tech with a cybersecurity minor.">
+  <title>About | Cybersecurity Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left a { text-decoration: none; }
+    .header-left h1 { color: #58a6ff; font-size: 1.3rem; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .about-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); border-bottom: 1px solid #30363d; padding: 80px 40px; text-align: center; }
+    .avatar { width: 80px; height: 80px; background: linear-gradient(135deg, #1f6feb, #58a6ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 24px; }
+    .about-hero h1 { font-size: 2.2rem; color: #ffffff; margin-bottom: 8px; }
+    .about-hero .subtitle { color: #58a6ff; font-size: 1rem; margin-bottom: 16px; }
+    .about-hero p { color: #8b949e; font-size: 1rem; max-width: 560px; margin: 0 auto; }
+    .about-container { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .about-container h2 { font-size: 1.4rem; color: #ffffff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+    .about-container p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .about-container ul { margin: 12px 0 20px 24px; color: #c9d1d9; font-size: 0.97rem; }
+    .about-container li { margin-bottom: 8px; }
+    .about-container a { color: #58a6ff; text-decoration: none; }
+    .about-container a:hover { text-decoration: underline; }
+    .about-container strong { color: #ffffff; }
+    .credentials { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+    .credential { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; text-align: center; }
+    .credential .icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .credential h4 { color: #ffffff; font-size: 0.95rem; margin-bottom: 4px; }
+    .credential p { color: #8b949e; font-size: 0.82rem; margin: 0; }
+    .callout { background: rgba(88,166,255,0.07); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 6px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 16px 20px; margin-top: 48px; font-size: 0.83rem; color: #8b949e; text-align: center; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; }
+    .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    .footer-links a { color: #58a6ff; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .header-left span { display: none; } .about-hero { padding: 60px 20px; } .about-container { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="index.html"><h1>🛡️ Cybersecurity Hub</h1></a>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="about-hero">
+  <div class="avatar">👨‍💻</div>
+  <h1>Hey, I'm Nate</h1>
+  <div class="subtitle">CS Freshman · Michigan Tech University · Cybersecurity Minor</div>
+  <p>I built this site to be the free cybersecurity resource I wish existed when I started learning.</p>
+</div>
+
+<div class="about-container">
+
+  <div class="credentials">
+    <div class="credential">
+      <div class="icon">🎓</div>
+      <h4>Michigan Tech University</h4>
+      <p>CS Freshman · Cybersecurity Minor</p>
+    </div>
+    <div class="credential">
+      <div class="icon">📰</div>
+      <h4>The Byte</h4>
+      <p>Chief Editor · ASCII Club Newspaper</p>
+    </div>
+    <div class="credential">
+      <div class="icon">🎯</div>
+      <h4>TryHackMe</h4>
+      <p>Active learner · CTFs & labs</p>
+    </div>
+    <div class="credential">
+      <div class="icon">🔬</div>
+      <h4>Personal Lab</h4>
+      <p>VirtualBox · Kali Linux · Windows</p>
+    </div>
+  </div>
+
+  <h2>My Story</h2>
+  <p>I grew up in a tech-oriented family and cybersecurity pulled me in
+  naturally. When I started learning I found a lot of confusing, outdated,
+  or overly technical content that assumed you already knew everything.
+  I wanted to build the resource I wish I had.</p>
+
+  <p>I'm currently studying Computer Science at Michigan Tech with a
+  cybersecurity minor, practicing hands-on through TryHackMe, class labs,
+  and personal projects. I'm also the Chief Editor of The Byte — the ASCII
+  Club newspaper at Michigan Tech — so communicating technical concepts
+  clearly is something I take seriously.</p>
+
+  <h2>Why Trust This Site?</h2>
+  <p>I'm not a guru claiming to have all the answers. I'm a student
+  actively learning cybersecurity the same way you probably are — through
+  free resources, labs, and a lot of trial and error.</p>
+
+  <div class="callout">
+    <p><strong>When I recommend a platform or tool</strong> it's because
+    I've genuinely used it or thoroughly researched it — not because
+    it pays the best commission.</p>
+  </div>
+
+  <h2>Where I'm Headed</h2>
+  <p>My goal is to become both a SOC Analyst and eventually a Penetration
+  Tester. I want to understand security from both the defensive and
+  offensive sides, and I'm documenting everything I learn along the way.</p>
+
+  <h2>What You'll Find Here</h2>
+  <ul>
+    <li><strong>Honest platform comparisons</strong> — TryHackMe vs HackTheBox and more</li>
+    <li><strong>Free study guides</strong> — Security+ and beyond without expensive courses</li>
+    <li><strong>Lab setup guides</strong> — how to practice safely for free</li>
+    <li><strong>Career guidance</strong> — SOC Analyst vs Pentester and how to get hired</li>
+    <li><strong>Tool tutorials</strong> — Nmap, Burp Suite, Linux, and more</li>
+  </ul>
+
+  <h2>Start Reading</h2>
+  <ul>
+    <li><a href="how-to-get-into-cybersecurity.html">How to Get Into Cybersecurity in 2026 →</a></li>
+    <li><a href="tryhackme-vs-hackthebox.html">TryHackMe vs HackTheBox →</a></li>
+    <li><a href="free-pentest-lab-setup.html">Free Pentest Lab Setup →</a></li>
+    <li><a href="comptia-security-plus-study-guide.html">CompTIA Security+ Study Guide →</a></li>
+  </ul>
+
+  <div class="disclosure">
+    Some links on this site are affiliate links. If you click them and
+    make a purchase I earn a small commission at no extra cost to you.
+    I only recommend tools and platforms I've actually used or thoroughly
+    researched.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">🛡️ Cybersecurity Hub</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+</body>
+</html>
