@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What is a SOC Analyst? Learn what they do, how much they earn, and the exact steps to become one in 2026 — no degree required.">
+  <title>What is a SOC Analyst and How to Become One in 2026 | RootAccess</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left h1 a { color: #58a6ff; text-decoration: none; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .article-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%); padding: 60px 40px; border-bottom: 1px solid #30363d; }
+    .article-hero .back { color: #58a6ff; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; opacity: 0.8; }
+    .article-hero .back:hover { opacity: 1; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; background: rgba(210,153,34,0.15); color: #d2991a; }
+    .article-hero h1 { font-size: 2.2rem; color: #ffffff; line-height: 1.3; max-width: 780px; margin-bottom: 16px; }
+    .article-hero .meta { color: #8b949e; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; }
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .content-wrap h2 { color: #ffffff; font-size: 1.4rem; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+    .content-wrap h3 { color: #e0e0e0; font-size: 1.1rem; margin: 28px 0 12px; }
+    .content-wrap p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .content-wrap ul, .content-wrap ol { color: #c9d1d9; padding-left: 24px; margin-bottom: 16px; }
+    .content-wrap li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content-wrap a { color: #58a6ff; text-decoration: none; }
+    .content-wrap a:hover { text-decoration: underline; }
+    .callout { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .warning { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.25); border-left: 4px solid #d2991a; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .warning p { margin: 0; color: #c9d1d9; }
+    .warning strong { color: #d2991a; }
+    .salary-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .salary-table th { background: #161b22; color: #58a6ff; padding: 12px 16px; text-align: left; font-size: 0.88rem; border: 1px solid #30363d; }
+    .salary-table td { padding: 12px 16px; border: 1px solid #30363d; color: #c9d1d9; font-size: 0.9rem; }
+    .salary-table tr:nth-child(even) td { background: #0d1117; }
+    .step-box { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; margin: 16px 0; display: flex; gap: 20px; align-items: flex-start; }
+    .step-num { background: linear-gradient(135deg, #1f6feb, #58a6ff); color: white; font-weight: 700; font-size: 1rem; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-box h4 { color: #ffffff; margin-bottom: 6px; font-size: 1rem; }
+    .step-box p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-top: 48px; font-size: 0.82rem; color: #8b949e; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; margin-top: 60px; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    .ask-ai-btn { position: fixed; bottom: 28px; right: 28px; background: linear-gradient(135deg, #1f6feb, #58a6ff); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 24px rgba(88,166,255,0.4); z-index: 9999; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+    .ask-ai-btn:hover { transform: scale(1.05); box-shadow: 0 6px 32px rgba(88,166,255,0.6); color: white; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .article-hero { padding: 40px 20px; } .article-hero h1 { font-size: 1.6rem; } .content-wrap { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1><a href="index.html">⚡ RootAccess</a></h1>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <a href="index.html" class="back">← Back to all articles</a>
+  <div class="tag">Career</div>
+  <h1>What is a SOC Analyst and How to Become One in 2026</h1>
+  <div class="meta">
+    <span>👤 Nate Bustos — Michigan Tech CS Student</span>
+    <span>📅 March 2026</span>
+    <span>⏱ 8 min read</span>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <p>When I first got into cybersecurity, everyone kept saying "start as a SOC Analyst." But nobody explained what that actually meant or how to get there. This guide breaks it all down — what a SOC Analyst does, what they earn, and the exact steps to land your first role.</p>
+
+  <div class="callout">
+    <p><strong>Bottom line up front:</strong> A SOC Analyst monitors systems for cyber threats and responds to security incidents. It's one of the most accessible entry points into cybersecurity — and it pays well from day one.</p>
+  </div>
+
+  <h2>What is a SOC Analyst?</h2>
+  <p>A SOC (Security Operations Center) Analyst is the person watching over an organization's digital infrastructure 24/7. Think of them as the security guards of the internet — but instead of watching camera feeds, they're monitoring network traffic, analyzing alerts, and hunting for threats.</p>
+  <p>SOC teams typically work in shifts to keep coverage around the clock. As an analyst you'll spend your day triaging security alerts, investigating suspicious activity, and escalating real threats to senior team members.</p>
+  <p>It's not the most glamorous role — a lot of it is reading logs and chasing false positives — but it's the best way to build real-world security experience fast.</p>
+
+  <h2>SOC Analyst Tiers Explained</h2>
+
+  <h3>Tier 1 — Alert Analyst</h3>
+  <p>This is the entry-level role. You monitor dashboards, triage incoming alerts, and escalate anything suspicious. Most of your day is sorting real threats from false alarms using SIEM tools like Splunk or Microsoft Sentinel.</p>
+
+  <h3>Tier 2 — Incident Responder</h3>
+  <p>You take escalated alerts from Tier 1 and investigate deeper. This involves threat hunting, malware analysis, and coordinating responses to active incidents.</p>
+
+  <h3>Tier 3 — Threat Hunter / Senior Analyst</h3>
+  <p>Senior analysts proactively hunt for threats that haven't triggered alerts yet. They also develop detection rules and mentor junior analysts.</p>
+
+  <div class="warning">
+    <p><strong>Reality check:</strong> Tier 1 can be repetitive. You'll see the same types of alerts daily. The payoff is that you build pattern recognition fast — and that experience compounds into real skill over time.</p>
+  </div>
+
+  <h2>SOC Analyst Salaries in 2026</h2>
+  <table class="salary-table">
+    <tr>
+      <th>Level</th>
+      <th>Average Salary (US)</th>
+      <th>Experience</th>
+    </tr>
+    <tr>
+      <td>Tier 1 SOC Analyst</td>
+      <td>$55,000 – $75,000</td>
+      <td>0–2 years</td>
+    </tr>
+    <tr>
+      <td>Tier 2 SOC Analyst</td>
+      <td>$75,000 – $100,000</td>
+      <td>2–5 years</td>
+    </tr>
+    <tr>
+      <td>Tier 3 / Senior Analyst</td>
+      <td>$100,000 – $130,000+</td>
+      <td>5+ years</td>
+    </tr>
+  </table>
+
+  <h2>What Tools Do SOC Analysts Use?</h2>
+  <ul>
+    <li><strong>SIEM tools</strong> — Splunk, Microsoft Sentinel, IBM QRadar</li>
+    <li><strong>Wireshark</strong> — network packet analysis</li>
+    <li><strong>VirusTotal</strong> — quick malware and URL scanning</li>
+    <li><strong>Nmap</strong> — network scanning and reconnaissance</li>
+    <li><strong>Ticketing systems</strong> — ServiceNow, Jira</li>
+    <li><strong>Threat intel platforms</strong> — MISP, OpenCTI</li>
+  </ul>
+
+  <h2>How to Become a SOC Analyst in 2026 — Step by Step</h2>
+
+  <div class="step-box">
+    <div class="step-num">1</div>
+    <div>
+      <h4>Build your fundamentals with TryHackMe</h4>
+      <p>Start with the SOC Level 1 learning path on TryHackMe. It's built specifically for people who want to break into SOC work and covers everything from networking basics to SIEM fundamentals.</p>
+    </div>
+  </div>
+
+  <div class="step-box">
+    <div class="step-num">2</div>
+    <div>
+      <h4>Get CompTIA Security+</h4>
+      <p>Security+ is the most recognized entry-level cert for SOC roles. Study for free using Professor Messer on YouTube. Exam costs around $400 but employers often reimburse it.</p>
+    </div>
+  </div>
+
+  <div class="step-box">
+    <div class="step-num">3</div>
+    <div>
+      <h4>Learn the basics of Splunk</h4>
+      <p>Splunk is the most common SIEM tool in the industry. Splunk offers free training through Splunk Fundamentals 1 on their website. Familiarity with log searching gives you a real edge in interviews.</p>
+    </div>
+  </div>
+
+  <div class="step-box">
+    <div class="step-num">4</div>
+    <div>
+      <h4>Build a home lab</h4>
+      <p>Set up a free lab using VirtualBox with a Windows VM and Kali Linux VM. Practice analyzing network traffic with Wireshark. Check out our <a href="free-pentest-lab-setup.html">free pentest lab setup guide</a> to get started.</p>
+    </div>
+  </div>
+
+  <div class="step-box">
+    <div class="step-num">5</div>
+    <div>
+      <h4>Do CTFs and document everything</h4>
+      <p>Complete TryHackMe rooms and write up your process. Even basic writeups on GitHub show employers you can think analytically and communicate findings — two critical SOC skills.</p>
+    </div>
+  </div>
+
+  <div class="step-box">
+    <div class="step-num">6</div>
+    <div>
+      <h4>Apply broadly for Tier 1 roles</h4>
+      <p>Don't wait until you feel ready. Apply for Tier 1 SOC roles and help desk positions. Help desk experience is highly valued as a stepping stone into SOC work.</p>
+    </div>
+  </div>
+
+  <h2>Do You Need a Degree?</h2>
+  <p>No — but it helps. Many SOC analysts don't have a CS degree. Certifications and hands-on experience can substitute, especially at the Tier 1 level. If you're in college, stack certifications alongside your degree and you'll graduate with a serious edge.</p>
+
+  <h2>SOC Analyst vs Penetration Tester</h2>
+  <p>SOC analyst is a smarter starting point for most people. SOC roles are more available, hire at the entry level, and pay well from day one. Check out our full <a href="cybersecurity-career-paths.html">SOC Analyst vs Penetration Tester comparison</a> if you're still deciding.</p>
+
+  <h2>Final Thoughts</h2>
+  <p>SOC Analyst is one of the best entry points into cybersecurity in 2026. The pay is solid, the demand is high, and the skills transfer directly into more advanced roles. Start on TryHackMe, get your Security+, and apply before you feel fully ready.</p>
+
+  <div class="callout">
+    <p><strong>Your next step:</strong> Go to TryHackMe and start the <strong>SOC Level 1</strong> path today. It's free to start and gives you a clear picture of what the job actually involves.</p>
+  </div>
+
+  <div class="disclosure">
+    <strong>Disclosure:</strong> Some links on this page may be affiliate links. I may earn a small commission if you sign up through them, at no extra cost to you. I only recommend tools I genuinely think are worth it.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">⚡ RootAccess</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+<a href="https://claude.ai" target="_blank" class="ask-ai-btn">⚡ Ask AI</a>
+
+</body>
+</html>
