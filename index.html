@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="Pq2S4u5-hfMI4OZQ9CGMAwyUp_twJnyEefW_ysao4ls" />
@@ -8,168 +8,36 @@
   <title>RootAccess | Free Learning Resources</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0a0e1a;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
-
-    /* HEADER */
-    header {
-      background: #0d1117;
-      border-bottom: 1px solid #30363d;
-      padding: 0 40px;
-      height: 64px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.6; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
     .header-left { display: flex; align-items: center; gap: 12px; }
     .header-left h1 { color: #58a6ff; font-size: 1.3rem; }
-    .header-left span {
-      color: #8b949e;
-      font-size: 0.8rem;
-      border-left: 1px solid #30363d;
-      padding-left: 12px;
-    }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
     nav { display: flex; gap: 24px; }
-    nav a {
-      color: #8b949e;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
     nav a:hover { color: #58a6ff; }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%);
-      padding: 100px 40px;
-      text-align: center;
-      border-bottom: 1px solid #30363d;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(ellipse at center, rgba(88,166,255,0.05) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(88,166,255,0.1);
-      border: 1px solid rgba(88,166,255,0.3);
-      color: #58a6ff;
-      font-size: 0.8rem;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .hero h2 {
-      font-size: 3rem;
-      color: #ffffff;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
+    .hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%); padding: 100px 40px; text-align: center; border-bottom: 1px solid #30363d; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(88,166,255,0.05) 0%, transparent 60%); pointer-events: none; }
+    .hero-badge { display: inline-block; background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.3); color: #58a6ff; font-size: 0.8rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+    .hero h2 { font-size: 3rem; color: #ffffff; margin-bottom: 16px; line-height: 1.2; }
     .hero h2 span { color: #58a6ff; }
-    .hero p {
-      font-size: 1.1rem;
-      color: #8b949e;
-      max-width: 560px;
-      margin: 0 auto 36px;
-    }
+    .hero p { font-size: 1.1rem; color: #8b949e; max-width: 560px; margin: 0 auto 36px; }
     .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: #238636;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s;
-    }
+    .btn-primary { background: #238636; color: white; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
     .btn-primary:hover { background: #2ea043; }
-    .btn-secondary {
-      background: transparent;
-      color: #58a6ff;
-      padding: 12px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 1px solid #58a6ff;
-      transition: background 0.2s;
-    }
+    .btn-secondary { background: transparent; color: #58a6ff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid #58a6ff; transition: background 0.2s; }
     .btn-secondary:hover { background: rgba(88,166,255,0.1); }
-
-    /* STATS BAR */
-    .stats {
-      background: #161b22;
-      border-bottom: 1px solid #30363d;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
+    .stats { background: #161b22; border-bottom: 1px solid #30363d; padding: 20px 40px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
     .stat { text-align: center; }
     .stat .number { font-size: 1.5rem; font-weight: 700; color: #58a6ff; }
     .stat .label { font-size: 0.8rem; color: #8b949e; margin-top: 2px; }
-
-    /* CONTAINER */
     .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
-
-    .section-title {
-      font-size: 1.4rem;
-      color: #ffffff;
-      margin-bottom: 28px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #30363d;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* ARTICLE CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      margin-bottom: 70px;
-    }
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 24px;
-      transition: border-color 0.2s, transform 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-    .card:hover {
-      border-color: #58a6ff;
-      transform: translateY(-2px);
-    }
+    .section-title { font-size: 1.4rem; color: #ffffff; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 10px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 70px; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+    .card:hover { border-color: #58a6ff; transform: translateY(-2px); }
     .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-    .tag {
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    .tag { font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
     .tag-comparison { background: rgba(88,166,255,0.15); color: #58a6ff; }
     .tag-tutorial { background: rgba(35,134,54,0.15); color: #3fb950; }
     .tag-career { background: rgba(210,153,34,0.15); color: #d2991a; }
@@ -178,109 +46,66 @@
     .tag-resources { background: rgba(88,166,255,0.15); color: #58a6ff; }
     .tag-beginner { background: rgba(35,134,54,0.15); color: #3fb950; }
     .tag-lab { background: rgba(210,153,34,0.15); color: #d2991a; }
-    .card h3 {
-      color: #ffffff;
-      margin-bottom: 10px;
-      font-size: 1rem;
-      line-height: 1.4;
-      flex-grow: 1;
-    }
-    .card p {
-      color: #8b949e;
-      font-size: 0.88rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-    .card a.read-more {
-      color: #58a6ff;
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-top: auto;
-    }
+    .card h3 { color: #ffffff; margin-bottom: 10px; font-size: 1rem; line-height: 1.4; flex-grow: 1; }
+    .card p { color: #8b949e; font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+    .card a.read-more { color: #58a6ff; text-decoration: none; font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; gap: 4px; margin-top: auto; }
     .card a.read-more:hover { text-decoration: underline; }
-
-    /* TOOLS */
-    .tools {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-bottom: 70px;
-    }
-    .tool {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 24px;
-      text-align: center;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .tool:hover {
-      border-color: #58a6ff;
-      transform: translateY(-2px);
-    }
+    .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 70px; }
+    .tool { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+    .tool:hover { border-color: #58a6ff; transform: translateY(-2px); }
     .tool-icon { font-size: 2rem; margin-bottom: 12px; }
     .tool h4 { color: #ffffff; margin-bottom: 8px; font-size: 1rem; }
     .tool p { color: #8b949e; font-size: 0.85rem; margin-bottom: 16px; line-height: 1.5; }
-    .tool a {
-      background: #238636;
-      color: white;
-      padding: 8px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: background 0.2s;
-      display: inline-block;
-    }
+    .tool a { background: #238636; color: white; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; display: inline-block; }
     .tool a:hover { background: #2ea043; }
-
-    /* FOOTER */
-    footer {
-      background: #0d1117;
-      border-top: 1px solid #30363d;
-      padding: 40px;
-      text-align: center;
-      color: #8b949e;
-      font-size: 0.85rem;
-    }
-    footer .footer-brand {
-      color: #58a6ff;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
     footer a { color: #58a6ff; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-    footer .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin: 12px 0;
-      flex-wrap: wrap;
-    }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .header-left span { display: none; } .hero { padding: 60px 20px; } .hero h2 { font-size: 2rem; } .container { padding: 40px 20px; } .stats { gap: 30px; } }
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      header { padding: 0 20px; }
-      .header-left span { display: none; }
-      .hero { padding: 60px 20px; }
-      .hero h2 { font-size: 2rem; }
-      .container { padding: 40px 20px; }
-      .stats { gap: 30px; }
-    }
+    /* ── RA CHATBOT STYLES START ── */
+    #ra-chat-btn { position: fixed; bottom: 28px; right: 28px; width: 60px; height: 60px; background: linear-gradient(135deg, #1f6feb, #58a6ff); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(88,166,255,0.4); z-index: 9999; transition: transform 0.2s, box-shadow 0.2s; }
+    #ra-chat-btn:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(88,166,255,0.6); }
+    #ra-chat-btn svg { width: 28px; height: 28px; fill: white; }
+    #ra-chat-window { position: fixed; bottom: 100px; right: 28px; width: 360px; height: 500px; background: #0d1117; border: 1px solid #30363d; border-radius: 14px; display: none; flex-direction: column; z-index: 9998; box-shadow: 0 20px 60px rgba(0,0,0,0.6); overflow: hidden; font-family: 'Segoe UI', sans-serif; animation: slideUp 0.25s ease; }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    #ra-chat-window.open { display: flex; }
+    .ra-header { background: #161b22; border-bottom: 1px solid #30363d; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
+    .ra-header-dot { width: 36px; height: 36px; background: linear-gradient(135deg, #1f6feb, #58a6ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .ra-header-info h4 { color: #fff; font-size: 0.95rem; margin: 0; }
+    .ra-header-info span { color: #3fb950; font-size: 0.75rem; }
+    .ra-close { margin-left: auto; background: none; border: none; color: #8b949e; cursor: pointer; font-size: 1.3rem; line-height: 1; padding: 0 4px; }
+    .ra-close:hover { color: #fff; }
+    .ra-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; scrollbar-width: thin; scrollbar-color: #30363d transparent; }
+    .ra-msg { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 0.88rem; line-height: 1.55; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .ra-msg.bot { background: #161b22; border: 1px solid #30363d; color: #c9d1d9; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .ra-msg.user { background: #1f6feb; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+    .ra-typing { display: flex; gap: 4px; align-items: center; padding: 10px 14px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; border-bottom-left-radius: 4px; align-self: flex-start; }
+    .ra-typing span { width: 6px; height: 6px; background: #58a6ff; border-radius: 50%; animation: bounce 1.2s infinite; }
+    .ra-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .ra-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+    .ra-input-row { border-top: 1px solid #30363d; padding: 12px; display: flex; gap: 8px; background: #0d1117; }
+    .ra-input-row input { flex: 1; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #e0e0e0; font-size: 0.88rem; padding: 8px 12px; outline: none; font-family: inherit; }
+    .ra-input-row input:focus { border-color: #58a6ff; }
+    .ra-input-row input::placeholder { color: #8b949e; }
+    .ra-send { background: #1f6feb; border: none; border-radius: 8px; width: 38px; height: 38px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; flex-shrink: 0; }
+    .ra-send:hover { background: #58a6ff; }
+    .ra-send svg { width: 18px; height: 18px; fill: white; }
+    .ra-suggestions { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px; }
+    .ra-suggestion { background: #161b22; border: 1px solid #30363d; border-radius: 20px; color: #58a6ff; font-size: 0.75rem; padding: 4px 12px; cursor: pointer; transition: border-color 0.2s, background 0.2s; font-family: inherit; }
+    .ra-suggestion:hover { border-color: #58a6ff; background: rgba(88,166,255,0.08); }
+    /* ── RA CHATBOT STYLES END ── */
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-left">
-    <h1>🛡️ RootAccess</h1>
+    <h1>⚡ RootAccess</h1>
     <span>Free resources for security learners</span>
   </div>
   <nav>
@@ -289,44 +114,28 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-badge">🎓 Written by a Michigan Tech CS Student</div>
   <h2>Learn <span>Cybersecurity</span><br>for Free</h2>
   <p>Honest guides, tool comparisons, and lab walkthroughs from real TryHackMe and CTF experience.</p>
   <div class="hero-buttons">
-    <a href="how-to-get-into-cybersecurity" class="btn-primary">Start Learning →</a>
+    <a href="how-to-get-into-cybersecurity.html" class="btn-primary">Start Learning →</a>
     <a href="#tools" class="btn-secondary">Browse Tools</a>
   </div>
 </div>
 
-<!-- STATS BAR -->
 <div class="stats">
-  <div class="stat">
-    <div class="number">10</div>
-    <div class="label">Free Articles</div>
-  </div>
-  <div class="stat">
-    <div class="number">100%</div>
-    <div class="label">Free Resources</div>
-  </div>
-  <div class="stat">
-    <div class="number">4</div>
-    <div class="label">Recommended Tools</div>
-  </div>
-  <div class="stat">
-    <div class="number">0</div>
-    <div class="label">Paywalls</div>
-  </div>
+  <div class="stat"><div class="number">10</div><div class="label">Free Articles</div></div>
+  <div class="stat"><div class="number">100%</div><div class="label">Free Resources</div></div>
+  <div class="stat"><div class="number">4</div><div class="label">Recommended Tools</div></div>
+  <div class="stat"><div class="number">0</div><div class="label">Paywalls</div></div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="container">
-
   <h2 class="section-title">📚 Latest Articles</h2>
   <div class="cards">
 
-    <!-- ADD NEW ARTICLE CARDS HERE — paste new card blocks below this line -->
+    <!-- ADD NEW ARTICLE CARDS HERE -->
 
     <div class="card">
       <div class="card-top"><span class="tag tag-career">Career</span></div>
@@ -386,7 +195,7 @@
 
     <div class="card">
       <div class="card-top"><span class="tag tag-beginner">Beginner Guide</span></div>
-     <a href="how-to-get-into-cybersecurity.html" class="btn-primary">Start Learning →</a>
+      <h3>How to Get Into Cybersecurity in 2026</h3>
       <p>Complete beginner roadmap. Self-taught path from zero to job-ready with free resources.</p>
       <a href="how-to-get-into-cybersecurity.html" class="read-more">Read article →</a>
     </div>
@@ -400,45 +209,37 @@
 
   </div>
 
-  <!-- TOOLS SECTION -->
   <h2 class="section-title" id="tools">🔧 Recommended Tools & Platforms</h2>
   <div class="tools">
-
     <div class="tool">
       <div class="tool-icon">🎯</div>
       <h4>TryHackMe</h4>
       <p>Best platform for beginners. Guided rooms and structured learning paths.</p>
       <a href="https://tryhackme.com" target="_blank">Try Free</a>
     </div>
-
     <div class="tool">
       <div class="tool-icon">📦</div>
       <h4>HackTheBox</h4>
       <p>Realistic machines for intermediate learners. Essential for OSCP prep.</p>
       <a href="https://hackthebox.com" target="_blank">Try Free</a>
     </div>
-
     <div class="tool">
       <div class="tool-icon">☁️</div>
       <h4>DigitalOcean</h4>
       <p>Best VPS for pentest labs. New users get $200 in free credits.</p>
       <a href="https://m.do.co/c/a2644c2e88b4" target="_blank">Get $200 Free</a>
     </div>
-
     <div class="tool">
       <div class="tool-icon">🌐</div>
       <h4>Namecheap</h4>
       <p>Cheapest domains for your lab and portfolio sites. Starting at $1.</p>
       <a href="https://namecheap.com" target="_blank">Get a Domain</a>
     </div>
-
   </div>
-
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-brand">🛡️ RootAccess</div>
+  <div class="footer-brand">⚡ RootAccess</div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -447,6 +248,131 @@
   <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
   <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
 </footer>
+
+<!-- RA CHATBOT START -->
+<button id="ra-chat-btn" onclick="toggleChat()" title="Ask a cybersecurity question">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.06L2 22l4.94-1.37A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+</button>
+
+<div id="ra-chat-window">
+  <div class="ra-header">
+    <div class="ra-header-dot">⚡</div>
+    <div class="ra-header-info">
+      <h4>RootAccess AI</h4>
+      <span>● Online — Cybersecurity Guide</span>
+    </div>
+    <button class="ra-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="ra-messages" id="ra-messages"></div>
+  <div class="ra-suggestions" id="ra-suggestions">
+    <button class="ra-suggestion" onclick="sendSuggestion('Where do I start with cybersecurity?')">Where do I start?</button>
+    <button class="ra-suggestion" onclick="sendSuggestion('TryHackMe or HackTheBox?')">THM vs HTB?</button>
+    <button class="ra-suggestion" onclick="sendSuggestion('How do I get Security+?')">Security+?</button>
+    <button class="ra-suggestion" onclick="sendSuggestion('How do I set up a pentest lab?')">Lab setup?</button>
+  </div>
+  <div class="ra-input-row">
+    <input id="ra-input" type="text" placeholder="Ask a cybersecurity question..." onkeydown="if(event.key==='Enter') sendMessage()" />
+    <button class="ra-send" onclick="sendMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const API_KEY = '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';
+  const SYSTEM_PROMPT = `You are RootAccess AI, a friendly cybersecurity guide on the RootAccess website — a free cybersecurity education site written by Nate, a CS freshman at Michigan Tech with a cybersecurity minor. Help beginners learn cybersecurity. Be concise, friendly, and practical. Keep responses under 150 words. Recommend TryHackMe for beginners, HackTheBox for intermediate, DigitalOcean for cloud labs ($200 free credits), CompTIA Security+ as first cert, Professor Messer on YouTube for free Security+ prep, and OverTheWire Bandit for Linux practice. Always encourage beginners. If asked something outside cybersecurity, politely redirect. End responses with a short follow-up question.`;
+
+  let messages = [];
+  let isOpen = false;
+  let initialized = false;
+
+  function toggleChat() {
+    isOpen = !isOpen;
+    document.getElementById('ra-chat-window').classList.toggle('open', isOpen);
+    if (isOpen && !initialized) {
+      initialized = true;
+      addBotMessage("Hey! 👋 I'm the RootAccess AI — ask me anything about getting into cybersecurity. What would you like to know?");
+    }
+    if (isOpen) setTimeout(() => document.getElementById('ra-input').focus(), 100);
+  }
+
+  function addBotMessage(text) {
+    const el = document.createElement('div');
+    el.className = 'ra-msg bot';
+    el.textContent = text;
+    document.getElementById('ra-messages').appendChild(el);
+    scrollToBottom();
+  }
+
+  function addUserMessage(text) {
+    const el = document.createElement('div');
+    el.className = 'ra-msg user';
+    el.textContent = text;
+    document.getElementById('ra-messages').appendChild(el);
+    scrollToBottom();
+    document.getElementById('ra-suggestions').style.display = 'none';
+  }
+
+  function showTyping() {
+    const el = document.createElement('div');
+    el.className = 'ra-typing';
+    el.id = 'ra-typing';
+    el.innerHTML = '<span></span><span></span><span></span>';
+    document.getElementById('ra-messages').appendChild(el);
+    scrollToBottom();
+  }
+
+  function hideTyping() {
+    const el = document.getElementById('ra-typing');
+    if (el) el.remove();
+  }
+
+  function scrollToBottom() {
+    const msgs = document.getElementById('ra-messages');
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function sendSuggestion(text) {
+    document.getElementById('ra-input').value = text;
+    sendMessage();
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('ra-input');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    addUserMessage(text);
+    messages.push({ role: 'user', content: text });
+    showTyping();
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': API_KEY,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-allow-browser': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 300,
+          system: SYSTEM_PROMPT,
+          messages: messages
+        })
+      });
+      const data = await response.json();
+      const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Try again!";
+      hideTyping();
+      addBotMessage(reply);
+      messages.push({ role: 'assistant', content: reply });
+    } catch (err) {
+      hideTyping();
+      addBotMessage("Hmm, something went wrong. Check your connection and try again!");
+    }
+  }
+</script>
+<!-- RA CHATBOT END -->
 
 </body>
 </html>
