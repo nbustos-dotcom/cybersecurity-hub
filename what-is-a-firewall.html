@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What is a firewall and how does it work? Plain English explanation for beginners covering types, examples, and why firewalls matter in 2026.">
+  <title>What is a Firewall? Explained for Beginners 2026 | RootAccess</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left h1 a { color: #58a6ff; text-decoration: none; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .article-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%); padding: 60px 40px; border-bottom: 1px solid #30363d; }
+    .article-hero .back { color: #58a6ff; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; opacity: 0.8; }
+    .article-hero .back:hover { opacity: 1; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .article-hero h1 { font-size: 2.2rem; color: #ffffff; line-height: 1.3; max-width: 780px; margin-bottom: 16px; }
+    .article-hero .meta { color: #8b949e; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; }
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .content-wrap h2 { color: #ffffff; font-size: 1.4rem; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+    .content-wrap h3 { color: #e0e0e0; font-size: 1.1rem; margin: 28px 0 12px; }
+    .content-wrap p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .content-wrap ul, .content-wrap ol { color: #c9d1d9; padding-left: 24px; margin-bottom: 16px; }
+    .content-wrap li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content-wrap a { color: #58a6ff; text-decoration: none; }
+    .content-wrap a:hover { text-decoration: underline; }
+    .callout { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .warning { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.25); border-left: 4px solid #d2991a; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .warning p { margin: 0; color: #c9d1d9; }
+    .warning strong { color: #d2991a; }
+    .type-box { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; margin: 16px 0; }
+    .type-box h4 { color: #58a6ff; margin-bottom: 8px; font-size: 1rem; }
+    .type-box p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .comparison-table th { background: #161b22; color: #58a6ff; padding: 12px 16px; text-align: left; font-size: 0.88rem; border: 1px solid #30363d; }
+    .comparison-table td { padding: 12px 16px; border: 1px solid #30363d; color: #c9d1d9; font-size: 0.9rem; }
+    .comparison-table tr:nth-child(even) td { background: #0d1117; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-top: 48px; font-size: 0.82rem; color: #8b949e; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; margin-top: 60px; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    .ask-ai-btn { position: fixed; bottom: 28px; right: 28px; background: linear-gradient(135deg, #1f6feb, #58a6ff); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 24px rgba(88,166,255,0.4); z-index: 9999; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+    .ask-ai-btn:hover { transform: scale(1.05); box-shadow: 0 6px 32px rgba(88,166,255,0.6); color: white; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .article-hero { padding: 40px 20px; } .article-hero h1 { font-size: 1.6rem; } .content-wrap { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1><a href="index.html">⚡ RootAccess</a></h1>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <a href="index.html" class="back">← Back to all articles</a>
+  <div class="tag">Beginner</div>
+  <h1>What is a Firewall? Explained for Beginners 2026</h1>
+  <div class="meta">
+    <span>👤 Nate Bustos — Michigan Tech CS Student</span>
+    <span>📅 March 2026</span>
+    <span>⏱ 7 min read</span>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <p>If you've ever set up a router, installed antivirus software, or taken a networking class, you've heard the word "firewall." But what does it actually do? This guide breaks it down in plain English — no jargon, no fluff.</p>
+
+  <div class="callout">
+    <p><strong>Bottom line up front:</strong> A firewall is a security system that monitors and controls incoming and outgoing network traffic based on a set of rules. Think of it as a bouncer at a club — it decides who gets in and who gets turned away.</p>
+  </div>
+
+  <h2>What Does a Firewall Actually Do?</h2>
+  <p>Every time your computer sends or receives data over the internet, that data is broken into small packets. A firewall inspects those packets and decides whether to allow them through or block them based on rules set by a network administrator — or in your case, whoever set up your router.</p>
+  <p>Without a firewall, your computer is exposed to every piece of traffic on the internet — including malicious traffic from hackers, bots, and malware. A firewall acts as the first line of defense between your device and the outside world.</p>
+
+  <div class="warning">
+    <p><strong>Common misconception:</strong> A firewall is not the same as antivirus software. Antivirus deals with malicious files already on your device. A firewall controls what traffic reaches your device in the first place. You need both.</p>
+  </div>
+
+  <h2>Types of Firewalls Explained</h2>
+
+  <div class="type-box">
+    <h4>🔹 Packet Filtering Firewall</h4>
+    <p>The most basic type. It inspects each packet individually and checks it against a set of rules — things like IP address, port number, and protocol. Fast and lightweight but can't detect complex attacks. Think of it as checking an ID at the door without looking inside someone's bag.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🔹 Stateful Inspection Firewall</h4>
+    <p>More advanced than packet filtering. It tracks the state of active connections and makes decisions based on context — not just individual packets. This is the standard in most modern firewalls. It's like a bouncer who remembers you came in earlier and knows you're allowed back.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🔹 Application Layer Firewall (Proxy Firewall)</h4>
+    <p>Operates at the application level and can inspect the actual content of traffic — like HTTP requests or FTP commands. Much more thorough but slower. Used by enterprises to inspect web traffic deeply.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🔹 Next-Generation Firewall (NGFW)</h4>
+    <p>The modern standard for enterprise security. Combines stateful inspection with deep packet inspection, intrusion prevention, and application awareness. Tools like Palo Alto, Fortinet, and Cisco Firepower are examples you'll encounter in SOC work.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🔹 Software vs Hardware Firewalls</h4>
+    <p>Software firewalls run on your device (like Windows Defender Firewall). Hardware firewalls are physical devices that sit between your network and the internet — like the firewall built into your home router. Enterprises use both.</p>
+  </div>
+
+  <h2>How Firewall Rules Work</h2>
+  <p>Firewalls use rules — sometimes called Access Control Lists (ACLs) — to decide what traffic to allow or block. A basic rule might look like this:</p>
+  <ul>
+    <li><strong>Allow</strong> all traffic on port 443 (HTTPS — secure web browsing)</li>
+    <li><strong>Allow</strong> all traffic on port 80 (HTTP — regular web browsing)</li>
+    <li><strong>Block</strong> all traffic on port 23 (Telnet — old, insecure protocol)</li>
+    <li><strong>Block</strong> all inbound traffic from a specific IP address</li>
+    <li><strong>Deny</strong> everything else by default</li>
+  </ul>
+  <p>Rules are processed top to bottom. The first rule that matches the traffic wins. This is why rule order matters — a misconfigured rule order is one of the most common firewall mistakes in real environments.</p>
+
+  <h2>Common Ports You Should Know</h2>
+  <table class="comparison-table">
+    <tr>
+      <th>Port</th>
+      <th>Protocol</th>
+      <th>Usually Allowed?</th>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>HTTP</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>443</td>
+      <td>HTTPS</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>SSH</td>
+      <td>Sometimes (restricted)</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>FTP</td>
+      <td>Often blocked</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Telnet</td>
+      <td>Almost always blocked</td>
+    </tr>
+    <tr>
+      <td>3389</td>
+      <td>RDP</td>
+      <td>Restricted</td>
+    </tr>
+  </table>
+
+  <h2>Firewalls in the Real World</h2>
+  <p>Here's where you'll encounter firewalls in practice:</p>
+  <ul>
+    <li><strong>Home router</strong> — your router has a basic hardware firewall built in that blocks unsolicited inbound traffic</li>
+    <li><strong>Windows Defender Firewall</strong> — software firewall on every Windows machine, controls per-app traffic</li>
+    <li><strong>Enterprise networks</strong> — large organizations use NGFWs like Palo Alto or Fortinet at the network perimeter</li>
+    <li><strong>Cloud environments</strong> — AWS, Azure, and DigitalOcean all have firewall rules you configure for your servers</li>
+    <li><strong>TryHackMe and CTFs</strong> — many rooms involve bypassing or exploiting misconfigured firewalls</li>
+  </ul>
+
+  <h2>Can Firewalls Be Bypassed?</h2>
+  <p>Yes — and understanding how is a core part of cybersecurity. Common bypass techniques include:</p>
+  <ul>
+    <li><strong>Port tunneling</strong> — hiding malicious traffic inside allowed ports like 80 or 443</li>
+    <li><strong>VPNs and proxies</strong> — routing traffic through an allowed middleman</li>
+    <li><strong>Exploiting misconfigurations</strong> — overly permissive rules that allow too much traffic</li>
+    <li><strong>Application layer attacks</strong> — attacks that look like legitimate web traffic to basic firewalls</li>
+  </ul>
+  <p>This is exactly why NGFWs with deep packet inspection exist — they can detect malicious traffic even when it's disguised as normal traffic.</p>
+
+  <h2>Firewalls and Cybersecurity Careers</h2>
+  <p>Understanding firewalls is essential for almost every cybersecurity role. As a <a href="what-is-a-soc-analyst.html">SOC Analyst</a> you'll work with firewall logs daily. As a penetration tester you'll look for ways around them. As a network engineer you'll configure and manage them.</p>
+  <p>On TryHackMe, the Networking fundamentals path covers firewalls in detail and is worth completing early in your learning journey.</p>
+
+  <h2>Final Thoughts</h2>
+  <p>A firewall is one of the most fundamental concepts in cybersecurity. Whether you're studying for <a href="comptia-security-plus-study-guide.html">CompTIA Security+</a>, working through TryHackMe rooms, or preparing for a SOC role — understanding how firewalls work, what types exist, and how they can be bypassed is essential knowledge.</p>
+
+  <div class="callout">
+    <p><strong>Your next step:</strong> Open Windows Defender Firewall on your PC and explore the inbound and outbound rules. See what's allowed and what's blocked by default. Hands-on curiosity is how you actually learn this stuff.</p>
+  </div>
+
+  <div class="disclosure">
+    <strong>Disclosure:</strong> Some links on this page may be affiliate links. I may earn a small commission if you sign up through them, at no extra cost to you. I only recommend tools I genuinely think are worth it.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">⚡ RootAccess</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+<a href="https://claude.ai" target="_blank" class="ask-ai-btn">⚡ Ask AI</a>
+
+</body>
+</html>
