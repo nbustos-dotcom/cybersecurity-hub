@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What is social engineering? Plain English explanation for beginners covering phishing, pretexting, baiting, and how to protect yourself in 2026.">
+  <title>What is Social Engineering? Explained for Beginners 2026 | RootAccess</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left h1 a { color: #58a6ff; text-decoration: none; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .article-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%); padding: 60px 40px; border-bottom: 1px solid #30363d; }
+    .article-hero .back { color: #58a6ff; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; opacity: 0.8; }
+    .article-hero .back:hover { opacity: 1; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .article-hero h1 { font-size: 2.2rem; color: #ffffff; line-height: 1.3; max-width: 780px; margin-bottom: 16px; }
+    .article-hero .meta { color: #8b949e; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; }
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .content-wrap h2 { color: #ffffff; font-size: 1.4rem; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+    .content-wrap h3 { color: #e0e0e0; font-size: 1.1rem; margin: 28px 0 12px; }
+    .content-wrap p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .content-wrap ul, .content-wrap ol { color: #c9d1d9; padding-left: 24px; margin-bottom: 16px; }
+    .content-wrap li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content-wrap a { color: #58a6ff; text-decoration: none; }
+    .content-wrap a:hover { text-decoration: underline; }
+    .callout { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .warning { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.25); border-left: 4px solid #d2991a; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .warning p { margin: 0; color: #c9d1d9; }
+    .warning strong { color: #d2991a; }
+    .type-box { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; margin: 16px 0; }
+    .type-box h4 { color: #58a6ff; margin-bottom: 8px; font-size: 1rem; }
+    .type-box p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .comparison-table th { background: #161b22; color: #58a6ff; padding: 12px 16px; text-align: left; font-size: 0.88rem; border: 1px solid #30363d; }
+    .comparison-table td { padding: 12px 16px; border: 1px solid #30363d; color: #c9d1d9; font-size: 0.9rem; }
+    .comparison-table tr:nth-child(even) td { background: #0d1117; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-top: 48px; font-size: 0.82rem; color: #8b949e; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; margin-top: 60px; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    .ask-ai-btn { position: fixed; bottom: 28px; right: 28px; background: linear-gradient(135deg, #1f6feb, #58a6ff); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 24px rgba(88,166,255,0.4); z-index: 9999; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+    .ask-ai-btn:hover { transform: scale(1.05); box-shadow: 0 6px 32px rgba(88,166,255,0.6); color: white; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .article-hero { padding: 40px 20px; } .article-hero h1 { font-size: 1.6rem; } .content-wrap { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1><a href="index.html">⚡ RootAccess</a></h1>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <a href="index.html" class="back">← Back to all articles</a>
+  <div class="tag">Beginner</div>
+  <h1>What is Social Engineering? Explained for Beginners 2026</h1>
+  <div class="meta">
+    <span>👤 Nate Bustos — Michigan Tech CS Student</span>
+    <span>📅 March 2026</span>
+    <span>⏱ 8 min read</span>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <p>Most cyberattacks don't start with a hacker typing furiously at a terminal. They start with a fake email, a phone call, or a text message. Social engineering is the art of manipulating people — not machines — into giving up information or access they shouldn't. It's one of the most common and effective attack vectors in cybersecurity today.</p>
+
+  <div class="callout">
+    <p><strong>Bottom line up front:</strong> Social engineering exploits human psychology rather than technical vulnerabilities. No software patch can fix it — awareness and habits are your only real defense.</p>
+  </div>
+
+  <h2>Why Social Engineering Works</h2>
+  <p>Humans are wired to be helpful, trusting, and responsive to urgency and authority. Attackers exploit these traits deliberately. A well-crafted phishing email doesn't need to be technically sophisticated — it just needs to convince one person to click a link or enter a password.</p>
+  <p>According to Verizon's annual Data Breach Investigations Report, the vast majority of breaches involve a human element. Social engineering is the most common starting point — not zero-day exploits, not advanced malware. Just people being manipulated.</p>
+
+  <div class="warning">
+    <p><strong>Important:</strong> Social engineering attacks target everyone — from executives to interns. Technical knowledge doesn't make you immune. Some of the most successful attacks have targeted IT and security professionals directly.</p>
+  </div>
+
+  <h2>Types of Social Engineering Attacks</h2>
+
+  <div class="type-box">
+    <h4>🎣 Phishing</h4>
+    <p>The most common type. An attacker sends a fraudulent email that appears to come from a trusted source — your bank, your employer, Microsoft, Google — and tricks you into clicking a malicious link or entering your credentials on a fake login page. Phishing is the entry point for a huge percentage of data breaches.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🎯 Spear Phishing</h4>
+    <p>A targeted version of phishing. Instead of sending mass emails, the attacker researches a specific person — their name, job title, coworkers, recent activity — and crafts a highly personalized message. Much harder to detect because it feels legitimate. Often used against executives (called "whaling" when targeting C-suite).</p>
+  </div>
+
+  <div class="type-box">
+    <h4>📞 Vishing (Voice Phishing)</h4>
+    <p>Phishing over the phone. An attacker calls pretending to be tech support, the IRS, your bank, or a coworker. They create urgency ("your account has been compromised") and pressure you into giving up sensitive information or performing an action — like wiring money or resetting a password.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>📱 Smishing (SMS Phishing)</h4>
+    <p>Phishing via text message. Common examples include fake package delivery alerts, bank fraud warnings, or prize notifications — all with a link that leads to a malicious site or prompts you to call a fake number. Increasingly common as people trust text messages more than emails.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🎭 Pretexting</h4>
+    <p>The attacker creates a fabricated scenario — a "pretext" — to gain your trust and extract information. For example, posing as an IT technician who needs your login to fix an issue, or a researcher conducting a survey. The attack is built around a believable story rather than technical trickery.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🪤 Baiting</h4>
+    <p>Leaving something tempting — like a USB drive labeled "Payroll Q1 2026" — in a parking lot or common area, hoping someone will plug it in out of curiosity. Once inserted, it executes malware automatically. This works more often than you'd think. USB baiting is a classic red team technique.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🚪 Tailgating (Piggybacking)</h4>
+    <p>A physical attack. An attacker follows an authorized person through a secured door without badging in — often while carrying something (a box, coffee cups) to seem legitimate. No technical skill required. A polite person holding the door is all it takes to bypass physical security.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🔄 Quid Pro Quo</h4>
+    <p>The attacker offers something in exchange for information. A classic example: calling random employees at a company pretending to be IT support offering to help fix a common issue — and in the process asking for their login credentials to "verify their account."</p>
+  </div>
+
+  <h2>Real-World Examples</h2>
+  <p>Social engineering isn't theoretical — some of the biggest breaches in history started with it:</p>
+  <ul>
+    <li><strong>Twitter hack (2020)</strong> — Attackers called Twitter employees, impersonated internal IT staff, and convinced them to hand over credentials to internal tools. Result: high-profile accounts (Obama, Elon Musk, Apple) hijacked in a Bitcoin scam.</li>
+    <li><strong>RSA SecurID breach (2011)</strong> — A single phishing email with an Excel attachment opened by one employee gave attackers a foothold into RSA's network and compromised their SecurID token system used by millions.</li>
+    <li><strong>MGM Resorts breach (2023)</strong> — Attackers called the MGM IT help desk, impersonated an employee, and reset credentials. A 10-minute phone call led to days of disruption and over $100 million in losses.</li>
+  </ul>
+
+  <h2>The Psychology Behind the Attacks</h2>
+  <p>Social engineers exploit well-documented psychological principles. Knowing them helps you recognize when someone is using them against you:</p>
+  <table class="comparison-table">
+    <tr>
+      <th>Principle</th>
+      <th>How It's Exploited</th>
+    </tr>
+    <tr>
+      <td>Authority</td>
+      <td>"This is your IT department — we need your password immediately."</td>
+    </tr>
+    <tr>
+      <td>Urgency / Scarcity</td>
+      <td>"Your account will be locked in 10 minutes if you don't act now."</td>
+    </tr>
+    <tr>
+      <td>Social Proof</td>
+      <td>"Everyone else on your team has already verified their account."</td>
+    </tr>
+    <tr>
+      <td>Liking / Familiarity</td>
+      <td>Using your name, referencing your coworkers, mimicking your company's tone.</td>
+    </tr>
+    <tr>
+      <td>Reciprocity</td>
+      <td>"I helped fix your issue last week — can you just give me your access code?"</td>
+    </tr>
+    <tr>
+      <td>Fear</td>
+      <td>"We've detected suspicious activity. Verify now or your account will be suspended."</td>
+    </tr>
+  </table>
+
+  <h2>How to Protect Yourself</h2>
+  <p>No technical control fully prevents social engineering — but these habits dramatically reduce your risk:</p>
+  <ul>
+    <li><strong>Slow down.</strong> Urgency is a red flag, not a reason to act. Legitimate organizations give you time to verify.</li>
+    <li><strong>Verify independently.</strong> If someone calls claiming to be from your bank or IT team, hang up and call back using a number you look up yourself — not one they gave you.</li>
+    <li><strong>Don't trust caller ID or email "From" fields.</strong> Both can be spoofed trivially.</li>
+    <li><strong>Use multi-factor authentication (MFA).</strong> Even if an attacker gets your password, MFA adds a second barrier.</li>
+    <li><strong>Never plug in unknown USB drives.</strong> Curiosity is what attackers count on.</li>
+    <li><strong>Question unusual requests.</strong> Legitimate IT staff will never ask for your password. No exceptions.</li>
+    <li><strong>Report suspicious contacts.</strong> If you think you were targeted, tell your security team — even if you didn't fall for it.</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>Pro tip:</strong> The best defense against social engineering is a culture of "verify, then trust." Make it normal in your workplace to double-check unusual requests — even from people who seem to be colleagues or management.</p>
+  </div>
+
+  <h2>Social Engineering in Cybersecurity Careers</h2>
+  <p>Understanding social engineering is essential no matter which path you take in security. As a <a href="what-is-a-soc-analyst.html">SOC Analyst</a>, you'll investigate phishing incidents and train users to spot them. As a penetration tester, social engineering (phishing simulations, vishing, physical access tests) is a core part of red team engagements. The <a href="comptia-security-plus-study-guide.html">CompTIA Security+</a> exam covers social engineering attacks in depth — it's a guaranteed topic.</p>
+  <p>On TryHackMe, the Phishing module and the Social Engineering room give you hands-on experience identifying and crafting phishing campaigns in a legal, controlled environment.</p>
+
+  <h2>Final Thoughts</h2>
+  <p>Social engineering is the most human side of cybersecurity. You can patch software, but you can't patch people — which is exactly why attackers use it. The best thing you can do is understand how these attacks work, recognize the psychological triggers they exploit, and build habits that make you a harder target.</p>
+  <p>Start by thinking about how you'd handle an unexpected call from "IT support" asking for your password. The right answer — "I don't give out passwords over the phone, I'll submit a ticket" — is simple, but most people aren't prepared to say it in the moment.</p>
+
+  <div class="callout">
+    <p><strong>Your next step:</strong> Run a free phishing simulation on yourself using a tool like <a href="https://www.knowbe4.com" target="_blank" rel="noopener">KnowBe4's free phishing test</a>, or complete the Phishing module on <a href="tryhackme-vs-hackthebox.html">TryHackMe</a> to see these attacks from both sides.</p>
+  </div>
+
+  <div class="disclosure">
+    <strong>Disclosure:</strong> Some links on this page may be affiliate links. I may earn a small commission if you sign up through them, at no extra cost to you. I only recommend tools I genuinely think are worth it.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">⚡ RootAccess</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+<a href="https://claude.ai" target="_blank" class="ask-ai-btn">⚡ Ask AI</a>
+
+</body>
+</html>
