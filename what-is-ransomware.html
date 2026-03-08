@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What is ransomware and how does it work? Plain English breakdown for beginners covering real attacks, how victims get infected, and how to protect yourself in 2026.">
+  <title>What is Ransomware? How It Works and How to Stay Safe in 2026 | RootAccess</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left h1 a { color: #58a6ff; text-decoration: none; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .article-hero { background: linear-gradient(135deg, #0d1117 0%, #1a0d0d 60%, #2d0f0f 100%); padding: 60px 40px; border-bottom: 1px solid #30363d; }
+    .article-hero .back { color: #58a6ff; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; opacity: 0.8; }
+    .article-hero .back:hover { opacity: 1; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; background: rgba(248,81,73,0.15); color: #f85149; }
+    .article-hero h1 { font-size: 2.2rem; color: #ffffff; line-height: 1.3; max-width: 780px; margin-bottom: 16px; }
+    .article-hero .meta { color: #8b949e; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; }
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .content-wrap h2 { color: #ffffff; font-size: 1.4rem; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+    .content-wrap h3 { color: #e0e0e0; font-size: 1.1rem; margin: 28px 0 12px; }
+    .content-wrap p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .content-wrap ul, .content-wrap ol { color: #c9d1d9; padding-left: 24px; margin-bottom: 16px; }
+    .content-wrap li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content-wrap a { color: #58a6ff; text-decoration: none; }
+    .content-wrap a:hover { text-decoration: underline; }
+    .callout { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .warning { background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.25); border-left: 4px solid #f85149; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .warning p { margin: 0; color: #c9d1d9; }
+    .warning strong { color: #f85149; }
+    .type-box { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; margin: 16px 0; }
+    .type-box h4 { color: #f85149; margin-bottom: 8px; font-size: 1rem; }
+    .type-box p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+    .timeline { border-left: 2px solid #30363d; padding-left: 24px; margin: 24px 0; }
+    .timeline-item { position: relative; margin-bottom: 28px; }
+    .timeline-item::before { content: ''; position: absolute; left: -31px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #f85149; border: 2px solid #0a0e1a; }
+    .timeline-item h4 { color: #ffffff; font-size: 0.95rem; margin-bottom: 4px; }
+    .timeline-item p { color: #8b949e; font-size: 0.88rem; margin: 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .comparison-table th { background: #161b22; color: #f85149; padding: 12px 16px; text-align: left; font-size: 0.88rem; border: 1px solid #30363d; }
+    .comparison-table td { padding: 12px 16px; border: 1px solid #30363d; color: #c9d1d9; font-size: 0.9rem; }
+    .comparison-table tr:nth-child(even) td { background: #0d1117; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-top: 48px; font-size: 0.82rem; color: #8b949e; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; margin-top: 60px; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    .ask-ai-btn { position: fixed; bottom: 28px; right: 28px; background: linear-gradient(135deg, #1f6feb, #58a6ff); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 24px rgba(88,166,255,0.4); z-index: 9999; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+    .ask-ai-btn:hover { transform: scale(1.05); box-shadow: 0 6px 32px rgba(88,166,255,0.6); color: white; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .article-hero { padding: 40px 20px; } .article-hero h1 { font-size: 1.6rem; } .content-wrap { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1><a href="index.html">⚡ RootAccess</a></h1>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <a href="index.html" class="back">← Back to all articles</a>
+  <div class="tag">Beginner</div>
+  <h1>What is Ransomware? How It Works and How to Stay Safe in 2026</h1>
+  <div class="meta">
+    <span>👤 Nate Bustos — Michigan Tech CS Student</span>
+    <span>📅 March 2026</span>
+    <span>⏱ 9 min read</span>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <p>Ransomware has shut down hospitals, paralyzed governments, and cost businesses billions of dollars — all from a single click on the wrong email. It's one of the most destructive and fastest-growing threats in cybersecurity today. This guide explains exactly how it works, who gets hit, and what you can do to protect yourself.</p>
+
+  <div class="callout">
+    <p><strong>Bottom line up front:</strong> Ransomware is malware that encrypts your files and demands payment — usually in cryptocurrency — to restore access. Even if you pay, there's no guarantee you'll get your data back. Prevention is everything.</p>
+  </div>
+
+  <h2>How Ransomware Works — Step by Step</h2>
+  <p>Ransomware attacks follow a predictable playbook. Understanding each stage is the first step to stopping one.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>1. Initial Access</h4>
+      <p>The attacker gets a foothold — usually via a phishing email with a malicious attachment or link, an exposed RDP port with a weak password, or a vulnerability in unpatched software. This is where most attacks begin.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>2. Execution</h4>
+      <p>The victim opens the file or the attacker exploits the vulnerability. The ransomware payload executes on the system, often disguised as a legitimate document or software update.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>3. Persistence & Lateral Movement</h4>
+      <p>Modern ransomware doesn't encrypt right away. It quietly moves through the network — spreading to other machines, stealing credentials, and identifying the most critical data to maximize leverage. This phase can last days or weeks undetected.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>4. Data Exfiltration</h4>
+      <p>Before encrypting, attackers often steal a copy of your sensitive data. This enables "double extortion" — pay to decrypt your files AND pay to prevent us from publishing your data publicly.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>5. Encryption</h4>
+      <p>The ransomware encrypts files across the network using strong asymmetric encryption (typically RSA or AES). Without the attacker's private key, the files are mathematically unrecoverable. The attack is now visible — every encrypted file gets a new extension and a ransom note appears on the desktop.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>6. Ransom Demand</h4>
+      <p>A ransom note instructs the victim to contact the attackers via a Tor-based website and pay in Bitcoin or Monero — typically anywhere from a few hundred dollars (personal victims) to millions (enterprises and hospitals).</p>
+    </div>
+  </div>
+
+  <h2>Types of Ransomware</h2>
+
+  <div class="type-box">
+    <h4>🔒 Crypto Ransomware</h4>
+    <p>The most common and destructive type. Encrypts your files — documents, photos, databases — making them completely inaccessible. WannaCry, REvil, and LockBit are all crypto ransomware families. Your system still boots, but your data is gone until you pay or restore from backup.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🖥️ Locker Ransomware</h4>
+    <p>Locks you out of your entire device rather than encrypting files. You can't log in or use the system at all. More common on mobile devices and older attacks. Generally easier to recover from than crypto ransomware.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>💀 Double Extortion Ransomware</h4>
+    <p>Encrypts your data AND threatens to publish it publicly if you don't pay. Popularized by groups like Maze in 2019, now the industry standard for professional ransomware gangs. Even if you have backups, they can still leak your data.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🎭 Ransomware-as-a-Service (RaaS)</h4>
+    <p>The business model behind most modern attacks. Ransomware developers lease their malware to affiliates who carry out attacks in exchange for a cut of the ransom (typically 20–30%). This is why ransomware attacks are so frequent — you don't need to code anything, just buy access. LockBit, BlackCat, and Cl0p all operated as RaaS platforms.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>📱 Mobile Ransomware</h4>
+    <p>Targets Android devices more than iOS due to sideloading. Usually locker-style rather than crypto. Often disguised as fake apps or system updates downloaded outside the official app store. Less devastating than enterprise attacks but increasingly common.</p>
+  </div>
+
+  <h2>Famous Real-World Attacks</h2>
+  <p>These aren't hypotheticals — ransomware has caused real, documented harm at massive scale:</p>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Attack</th>
+      <th>Year</th>
+      <th>Impact</th>
+    </tr>
+    <tr>
+      <td>WannaCry</td>
+      <td>2017</td>
+      <td>200,000+ systems in 150 countries. Hit the UK's NHS, disrupting hospitals and patient care.</td>
+    </tr>
+    <tr>
+      <td>NotPetya</td>
+      <td>2017</td>
+      <td>$10 billion in damages. Wiped entire organizations including Maersk shipping and Merck pharmaceutical.</td>
+    </tr>
+    <tr>
+      <td>Colonial Pipeline</td>
+      <td>2021</td>
+      <td>Shut down fuel supply to the US East Coast for 5 days. $4.4M ransom paid (partially recovered by FBI).</td>
+    </tr>
+    <tr>
+      <td>Change Healthcare</td>
+      <td>2024</td>
+      <td>Largest healthcare data breach in US history. Disrupted prescription processing across the country for weeks.</td>
+    </tr>
+    <tr>
+      <td>MGM Resorts</td>
+      <td>2023</td>
+      <td>Started with a social engineering call. Caused $100M+ in losses, slot machines and hotel systems offline for days.</td>
+    </tr>
+  </table>
+
+  <div class="warning">
+    <p><strong>Should you pay the ransom?</strong> Law enforcement agencies including the FBI recommend against it. Payment funds criminal operations, marks you as a willing payer (increasing future targeting), and roughly 20% of victims who pay never recover their data anyway. Always explore recovery options first.</p>
+  </div>
+
+  <h2>Who Gets Targeted?</h2>
+  <p>Early ransomware sprayed attacks broadly and hoped for small payments from individuals. Modern ransomware gangs are far more strategic — they call it "big game hunting":</p>
+  <ul>
+    <li><strong>Healthcare</strong> — hospitals can't afford downtime, making them likely to pay quickly. Patient data is also highly valuable for extortion.</li>
+    <li><strong>Critical infrastructure</strong> — energy, water, and transportation operators face enormous pressure to restore services fast.</li>
+    <li><strong>Education</strong> — universities hold massive amounts of research data and student records with often-limited security budgets.</li>
+    <li><strong>Government and municipalities</strong> — public sector organizations are frequently underfunded on IT security and hold sensitive citizen data.</li>
+    <li><strong>SMBs (Small and Medium Businesses)</strong> — often targeted because they lack enterprise-grade defenses but still have valuable data and cyber insurance.</li>
+  </ul>
+  <p>That said, individuals are still targeted — particularly through opportunistic phishing campaigns and malvertising. No one is completely off the radar.</p>
+
+  <h2>How Ransomware Gets In — The Most Common Entry Points</h2>
+  <ul>
+    <li><strong>Phishing emails</strong> — malicious attachments (Word docs with macros, PDFs, ZIP files) or links that download a dropper. Still the #1 initial access method.</li>
+    <li><strong>Exposed RDP (Remote Desktop Protocol)</strong> — RDP left open on the internet with weak or stolen credentials is a direct door into a network. Attackers actively scan for open port 3389.</li>
+    <li><strong>Unpatched vulnerabilities</strong> — WannaCry spread through EternalBlue, an NSA exploit for an unpatched Windows SMB vulnerability. Staying current on patches closes these doors.</li>
+    <li><strong>Malicious downloads</strong> — pirated software, cracked games, and fake tools downloaded from shady sites often bundle ransomware.</li>
+    <li><strong>Supply chain compromise</strong> — attackers compromise a trusted software vendor to push malware to all of their customers at once (see: Kaseya VSA attack, 2021).</li>
+  </ul>
+
+  <h2>How to Protect Yourself</h2>
+  <p>The good news: the vast majority of ransomware attacks are preventable with consistent, basic security hygiene.</p>
+
+  <h3>For individuals:</h3>
+  <ul>
+    <li><strong>Back up your data.</strong> Follow the 3-2-1 rule: 3 copies, on 2 different media types, 1 offsite (or cloud). A ransomware infection is a non-event if you have a clean, recent backup.</li>
+    <li><strong>Keep software updated.</strong> Most ransomware exploits known vulnerabilities that have patches available. Update Windows, your browser, and all software regularly.</li>
+    <li><strong>Don't open unexpected attachments.</strong> Even from people you know — their account may be compromised. Verify by calling or messaging separately.</li>
+    <li><strong>Use an ad blocker.</strong> Malvertising (malicious ads) is a common delivery vector. uBlock Origin is free and effective.</li>
+    <li><strong>Enable MFA everywhere.</strong> Multi-factor authentication stops attackers from using stolen credentials to access your accounts.</li>
+  </ul>
+
+  <h3>For organizations:</h3>
+  <ul>
+    <li><strong>Segment your network.</strong> If ransomware can only reach one segment, the blast radius is limited.</li>
+    <li><strong>Restrict RDP access.</strong> Never expose RDP directly to the internet. Use a VPN or jump host.</li>
+    <li><strong>Deploy EDR (Endpoint Detection and Response).</strong> Modern EDR tools can detect ransomware behavior — like mass file encryption — and kill the process before it completes.</li>
+    <li><strong>Run tabletop exercises.</strong> Simulate a ransomware incident before one happens. Know who to call, what to isolate, and how to recover before you're under pressure.</li>
+    <li><strong>Test your backups.</strong> Untested backups are just hope. Regularly verify that backups can actually be restored.</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>The single most effective defense:</strong> Offline, tested backups. Everything else reduces the likelihood of infection — backups are what save you when prevention fails. If you do nothing else, set up automatic backups today.</p>
+  </div>
+
+  <h2>Ransomware and Cybersecurity Careers</h2>
+  <p>Ransomware is one of the most relevant threats you'll encounter in almost any security role. As a <a href="what-is-a-soc-analyst.html">SOC Analyst</a>, you'll investigate ransomware incidents, analyze indicators of compromise, and work to contain infections. Incident response to ransomware is one of the most in-demand and well-paid specializations in the industry right now.</p>
+  <p>On TryHackMe, the Malware Analysis and Incident Response paths cover ransomware behavior in a hands-on lab environment. Understanding how ransomware operates is also heavily tested on the <a href="comptia-security-plus-study-guide.html">CompTIA Security+</a> exam.</p>
+  <p>Ransomware also overlaps heavily with <a href="what-is-social-engineering.html">social engineering</a> — most infections start with a phishing email, making the human layer just as important as technical defenses.</p>
+
+  <h2>Final Thoughts</h2>
+  <p>Ransomware is the most financially damaging form of cybercrime in the world right now, and it's not slowing down. The groups behind these attacks are sophisticated, well-funded, and increasingly targeting critical infrastructure. But the fundamentals that stop them haven't changed: patch your systems, back up your data, train people to recognize phishing, and lock down remote access.</p>
+  <p>You don't need a million-dollar security stack to dramatically reduce your risk. You need consistent habits and a plan for when — not if — something gets through.</p>
+
+  <div class="callout">
+    <p><strong>Your next step:</strong> Set up automatic backups right now if you haven't. On Windows, use File History or back up to an external drive plus a cloud service like Backblaze. On Mac, enable Time Machine. It takes 10 minutes and could save everything.</p>
+  </div>
+
+  <div class="disclosure">
+    <strong>Disclosure:</strong> Some links on this page may be affiliate links. I may earn a small commission if you sign up through them, at no extra cost to you. I only recommend tools I genuinely think are worth it.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">⚡ RootAccess</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+<a href="https://claude.ai" target="_blank" class="ask-ai-btn">⚡ Ask AI</a>
+
+</body>
+</html>

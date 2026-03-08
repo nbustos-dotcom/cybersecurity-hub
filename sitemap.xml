@@ -89,4 +89,9 @@
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
+<url>
+  <loc>https://nbustos-dotcom.github.io/RootAccess/what-is-ransomware.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
 </urlset>
