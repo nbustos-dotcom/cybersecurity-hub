@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What is OSINT? A beginner's guide to open source intelligence — how investigators, hackers, and security professionals gather information from public sources in 2026.">
+  <title>What is OSINT? Open Source Intelligence Explained for Beginners 2026 | RootAccess</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left h1 a { color: #58a6ff; text-decoration: none; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .article-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #1a0d2e 100%); padding: 60px 40px; border-bottom: 1px solid #30363d; }
+    .article-hero .back { color: #58a6ff; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; opacity: 0.8; }
+    .article-hero .back:hover { opacity: 1; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; background: rgba(188,77,252,0.15); color: #bc4dfc; }
+    .article-hero h1 { font-size: 2.2rem; color: #ffffff; line-height: 1.3; max-width: 780px; margin-bottom: 16px; }
+    .article-hero .meta { color: #8b949e; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; }
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .content-wrap h2 { color: #ffffff; font-size: 1.4rem; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+    .content-wrap h3 { color: #e0e0e0; font-size: 1.1rem; margin: 28px 0 12px; }
+    .content-wrap p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .content-wrap ul, .content-wrap ol { color: #c9d1d9; padding-left: 24px; margin-bottom: 16px; }
+    .content-wrap li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content-wrap a { color: #58a6ff; text-decoration: none; }
+    .content-wrap a:hover { text-decoration: underline; }
+    .callout { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .warning { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.25); border-left: 4px solid #d2991a; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .warning p { margin: 0; color: #c9d1d9; }
+    .warning strong { color: #d2991a; }
+    .type-box { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; margin: 16px 0; }
+    .type-box h4 { color: #bc4dfc; margin-bottom: 8px; font-size: 1rem; }
+    .type-box p { color: #8b949e; font-size: 0.9rem; margin: 0; }
+    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .tool-card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 20px; }
+    .tool-card h4 { color: #ffffff; font-size: 0.95rem; margin-bottom: 6px; }
+    .tool-card p { color: #8b949e; font-size: 0.85rem; margin: 0; line-height: 1.5; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .comparison-table th { background: #161b22; color: #bc4dfc; padding: 12px 16px; text-align: left; font-size: 0.88rem; border: 1px solid #30363d; }
+    .comparison-table td { padding: 12px 16px; border: 1px solid #30363d; color: #c9d1d9; font-size: 0.9rem; }
+    .comparison-table tr:nth-child(even) td { background: #0d1117; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-top: 48px; font-size: 0.82rem; color: #8b949e; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; margin-top: 60px; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    .ask-ai-btn { position: fixed; bottom: 28px; right: 28px; background: linear-gradient(135deg, #1f6feb, #58a6ff); color: white; padding: 14px 20px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 24px rgba(88,166,255,0.4); z-index: 9999; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
+    .ask-ai-btn:hover { transform: scale(1.05); box-shadow: 0 6px 32px rgba(88,166,255,0.6); color: white; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .article-hero { padding: 40px 20px; } .article-hero h1 { font-size: 1.6rem; } .content-wrap { padding: 40px 20px; } .tool-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1><a href="index.html">⚡ RootAccess</a></h1>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <a href="index.html" class="back">← Back to all articles</a>
+  <div class="tag">Intermediate</div>
+  <h1>What is OSINT? Open Source Intelligence Explained for Beginners 2026</h1>
+  <div class="meta">
+    <span>👤 Nate Bustos — Michigan Tech CS Student</span>
+    <span>📅 March 2026</span>
+    <span>⏱ 9 min read</span>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <p>Journalists use it to investigate war crimes. Penetration testers use it to profile targets before an engagement. Law enforcement uses it to track down criminals. And security researchers use it to expose data leaks before attackers do. OSINT — open source intelligence — is the art of gathering and analyzing information from publicly available sources. Here's how it works.</p>
+
+  <div class="callout">
+    <p><strong>Bottom line up front:</strong> OSINT is intelligence gathering using only public information — no hacking, no unauthorized access. If it's on the internet and accessible to anyone, it's fair game. The skill is knowing where to look and how to connect the dots.</p>
+  </div>
+
+  <h2>What Counts as "Open Source"?</h2>
+  <p>The "open source" in OSINT doesn't mean open source software — it means publicly available information. That includes a lot more than most people realize:</p>
+  <ul>
+    <li><strong>Social media</strong> — posts, photos, check-ins, followers, connections, usernames</li>
+    <li><strong>Public records</strong> — court documents, property records, business registrations, voter rolls</li>
+    <li><strong>Domain and IP data</strong> — WHOIS records, DNS history, SSL certificates, hosting information</li>
+    <li><strong>News and media</strong> — articles, interviews, press releases, conference talks</li>
+    <li><strong>Job postings</strong> — reveal technology stacks, organizational structure, and ongoing projects</li>
+    <li><strong>Data breaches</strong> — leaked databases indexed by services like Have I Been Pwned</li>
+    <li><strong>Metadata</strong> — GPS coordinates embedded in photos, author information in documents</li>
+    <li><strong>The Wayback Machine</strong> — archived versions of websites that no longer exist</li>
+    <li><strong>GitHub and code repositories</strong> — accidentally committed API keys, internal tooling, email addresses in commit history</li>
+  </ul>
+
+  <div class="warning">
+    <p><strong>Legal and ethical boundaries:</strong> OSINT only covers publicly accessible information. Accessing private accounts, bypassing authentication, or aggregating data to stalk or harass individuals is illegal regardless of whether the data is technically "public." Always use OSINT skills ethically and legally — know the purpose before you start digging.</p>
+  </div>
+
+  <h2>Who Uses OSINT and Why</h2>
+
+  <div class="type-box">
+    <h4>🔴 Penetration Testers & Red Teams</h4>
+    <p>The recon phase of every professional pentest starts with OSINT. Testers map out an organization's external attack surface — subdomains, employee names and emails, technology in use, exposed services — before touching a single system. The more they know, the more targeted and convincing their attack can be.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🔵 SOC Analysts & Threat Intelligence</h4>
+    <p>Blue teamers use OSINT to investigate suspicious IPs and domains, attribute attacks to known threat groups, and proactively monitor for leaked credentials or mentions of their organization on dark web forums. Threat intel feeds are largely OSINT at scale.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🕵️ Investigators & Journalists</h4>
+    <p>Groups like Bellingcat have used OSINT to geolocate photos from conflict zones, identify war crimes, and track the movements of state actors using only satellite imagery, social media posts, and public flight data. OSINT journalism has become a recognized discipline.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🏢 Corporate Security Teams</h4>
+    <p>Companies use OSINT to monitor their own external exposure — finding leaked API keys on GitHub, identifying rogue subdomains, checking if employee credentials appear in breach databases, and tracking what competitors are revealing through job postings.</p>
+  </div>
+
+  <div class="type-box">
+    <h4>🎭 Social Engineers & Attackers</h4>
+    <p>Attackers use OSINT extensively before launching <a href="what-is-social-engineering.html">social engineering</a> attacks. The more they know about a target — their job, their colleagues, their recent activities — the more convincing their phishing email or phone call will be. Understanding how attackers use OSINT is essential for defenders.</p>
+  </div>
+
+  <h2>The OSINT Process</h2>
+  <p>Effective OSINT isn't random Googling — it follows a structured process:</p>
+  <ol>
+    <li><strong>Define your objective.</strong> What are you trying to find out? A person's identity? An organization's attack surface? A domain's history? A clear goal stops you from getting lost in irrelevant data.</li>
+    <li><strong>Identify your sources.</strong> Which data sources are likely to have what you need? Social media for personal info, WHOIS for domain ownership, Shodan for exposed services.</li>
+    <li><strong>Collect.</strong> Gather raw data from your sources. Take screenshots and notes — information on the internet disappears. Use tools to automate where possible.</li>
+    <li><strong>Process and analyze.</strong> Connect the dots. A username found on one platform might link to a real name on another. An email found in a breach database might match a GitHub account with committed API keys.</li>
+    <li><strong>Report.</strong> Document your findings clearly — what you found, where you found it, and what it means. In a pentest, this becomes the recon section of your report.</li>
+  </ol>
+
+  <h2>Essential OSINT Tools</h2>
+
+  <div class="tool-grid">
+    <div class="tool-card">
+      <h4>🔍 Google Dorking</h4>
+      <p>Advanced search operators that find things Google indexes but hides from normal searches. <code>site:</code>, <code>filetype:</code>, <code>inurl:</code>, and <code>intitle:</code> can surface exposed login pages, leaked documents, and sensitive files.</p>
+    </div>
+    <div class="tool-card">
+      <h4>🌐 Shodan</h4>
+      <p>A search engine for internet-connected devices. Find exposed cameras, servers, industrial control systems, and misconfigured services by IP range, country, or technology. Essential for infrastructure recon.</p>
+    </div>
+    <div class="tool-card">
+      <h4>📧 theHarvester</h4>
+      <p>Gathers email addresses, subdomains, IPs, and employee names from public sources for a target domain. Included in Kali Linux. One of the first tools run during a pentest recon phase.</p>
+    </div>
+    <div class="tool-card">
+      <h4>🕸️ Maltego</h4>
+      <p>A graphical link analysis tool that visualizes relationships between people, domains, IP addresses, and organizations. Extremely powerful for mapping out complex networks of connections.</p>
+    </div>
+    <div class="tool-card">
+      <h4>📸 ExifTool</h4>
+      <p>Extracts metadata from images and documents — GPS coordinates, camera model, software used, author names, and timestamps. A single photo posted online can reveal the exact location it was taken.</p>
+    </div>
+    <div class="tool-card">
+      <h4>🔎 Recon-ng</h4>
+      <p>A modular web reconnaissance framework built in Python. Works like Metasploit but for OSINT — modules for harvesting emails, finding subdomains, looking up breach data, and more.</p>
+    </div>
+    <div class="tool-card">
+      <h4>🗄️ Wayback Machine</h4>
+      <p>Archive.org's snapshot database of the web. Find deleted pages, old versions of websites, removed job postings, and exposed files that no longer exist on the live site.</p>
+    </div>
+    <div class="tool-card">
+      <h4>🔐 Have I Been Pwned</h4>
+      <p>Check if an email address appears in known data breaches. Security teams use it to monitor employee credentials. Also available as an API for automated monitoring.</p>
+    </div>
+  </div>
+
+  <h2>Google Dorking — A Practical Example</h2>
+  <p>Google dorking is the most accessible OSINT technique and requires zero tools beyond a browser. Here are some operators and what they find:</p>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Dork</th>
+      <th>What It Finds</th>
+    </tr>
+    <tr>
+      <td><code>site:example.com filetype:pdf</code></td>
+      <td>All PDFs indexed from a specific domain — often includes internal documents.</td>
+    </tr>
+    <tr>
+      <td><code>site:github.com "example.com" "api_key"</code></td>
+      <td>GitHub commits or repos containing API keys for a specific domain.</td>
+    </tr>
+    <tr>
+      <td><code>inurl:admin site:example.com</code></td>
+      <td>Admin panels exposed on a target domain.</td>
+    </tr>
+    <tr>
+      <td><code>intitle:"index of" site:example.com</code></td>
+      <td>Open directory listings — servers with no index file exposing raw file trees.</td>
+    </tr>
+    <tr>
+      <td><code>filetype:env "DB_PASSWORD"</code></td>
+      <td>Exposed .env configuration files containing database credentials.</td>
+    </tr>
+    <tr>
+      <td><code>"@example.com" site:linkedin.com</code></td>
+      <td>Employees at a company indexed on LinkedIn — useful for building a target list.</td>
+    </tr>
+  </table>
+
+  <div class="warning">
+    <p><strong>Use dorking responsibly.</strong> Finding exposed files is one thing — downloading or using credentials you find is another. In a professional pentest context, you document and report findings. Outside of authorized testing, accessing systems using discovered credentials is unauthorized access regardless of how you found them.</p>
+  </div>
+
+  <h2>OSINT on Yourself — What Can People Find?</h2>
+  <p>One of the most valuable exercises you can do is run OSINT on yourself. You might be surprised what's publicly visible:</p>
+  <ul>
+    <li>Your username used across multiple platforms that can be linked together</li>
+    <li>Your home address from voter registration records or data broker sites</li>
+    <li>Photos with GPS metadata revealing your location or workplace</li>
+    <li>Email addresses in old forum posts, GitHub commits, or WHOIS records</li>
+    <li>Old social media posts you forgot about or thought were private</li>
+    <li>Your employer, job title, and colleagues from LinkedIn</li>
+  </ul>
+  <p>Tools like <strong>Sherlock</strong> (searches for a username across hundreds of platforms) and <strong>Have I Been Pwned</strong> are good starting points for a personal OSINT audit.</p>
+
+  <h2>OSINT in CTFs</h2>
+  <p>OSINT challenges are a staple of Capture The Flag competitions and are great for beginners because they require no hacking — just research skills. Common CTF OSINT challenges include:</p>
+  <ul>
+    <li>Geolocating a photo using landmarks, shadows, and street signs</li>
+    <li>Finding a person's identity from a partial username or email</li>
+    <li>Tracing the history of a domain or IP address</li>
+    <li>Finding a flag hidden in image metadata or an archived webpage</li>
+    <li>Reconstructing a timeline of events from social media posts</li>
+  </ul>
+  <p>TryHackMe has a dedicated OSINT learning path, and platforms like <a href="best-ctf-platforms.html">CTFtime</a> list competitions that regularly include OSINT categories. It's one of the best ways to build practical skills fast.</p>
+
+  <h2>OSINT and Cybersecurity Careers</h2>
+  <p>OSINT is relevant across almost every security role. Penetration testers use it during the recon phase of every engagement. <a href="what-is-a-soc-analyst.html">SOC Analysts</a> and threat intelligence analysts use it to investigate alerts and track threat actors. Bug bounty hunters use it to map out the attack surface of their targets. And it's increasingly valued in law enforcement, journalism, and corporate security.</p>
+  <p>The <a href="cybersecurity-career-paths.html">career path</a> you're targeting determines how deep you need to go — a penetration tester will use OSINT daily while a cloud security engineer might use it occasionally. Either way, understanding OSINT makes you a more well-rounded security professional.</p>
+
+  <h2>Final Thoughts</h2>
+  <p>OSINT is one of the most accessible entry points into practical security work. You don't need a lab, special hardware, or even Kali Linux — just a browser, curiosity, and a structured approach. The skills transfer directly to real-world pentesting, threat intelligence, incident response, and CTFs.</p>
+  <p>Start by running OSINT on yourself. Then try a TryHackMe OSINT room. Then pick a public target — your university, a bug bounty program, or a CTF challenge — and practice mapping out what's publicly visible. The best OSINT investigators aren't the ones with the fanciest tools. They're the ones who are most systematic.</p>
+
+  <div class="callout">
+    <p><strong>Your next step:</strong> Search your own name, email address, and primary username on Google and Have I Been Pwned. Then install Sherlock (<code>pip install sherlock-project</code>) and run it against your username to see where you show up across the web. What you find might surprise you.</p>
+  </div>
+
+  <div class="disclosure">
+    <strong>Disclosure:</strong> Some links on this page may be affiliate links. I may earn a small commission if you sign up through them, at no extra cost to you. I only recommend tools I genuinely think are worth it.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">⚡ RootAccess</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+<a href="https://claude.ai" target="_blank" class="ask-ai-btn">⚡ Ask AI</a>
+
+</body>
+</html>
