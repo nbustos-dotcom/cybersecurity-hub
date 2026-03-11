@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Man-in-the-Middle (MitM) attacks, how they work, common types, and essential prevention tips for beginners in cybersecurity.">
+  <link rel="canonical" href="https://nbustos-dotcom.github.io/RootAccess/what-is-man-in-the-middle-attack.html" />
+  <title>What is a Man-in-the-Middle (MitM) Attack? Understanding MitM Threats in 2026 | RootAccess</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left a { text-decoration: none; }
+    .header-left h1 { color: #58a6ff; font-size: 1.3rem; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .article-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%); padding: 60px 40px; border-bottom: 1px solid #30363d; text-align: center; }
+    .article-hero .back { color: #58a6ff; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; opacity: 0.8; }
+    .article-hero .back:hover { opacity: 1; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .tag-beginner { background: rgba(35,134,54,0.15); color: #3fb950; }
+    .tag-tutorial { background: rgba(35,134,54,0.15); color: #3fb950; }
+    .tag-comparison { background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .tag-career { background: rgba(210,153,34,0.15); color: #d2991a; }
+    .tag-certification { background: rgba(188,77,252,0.15); color: #bc4dfc; }
+    .tag-ctf { background: rgba(248,81,73,0.15); color: #f85149; }
+    .tag-lab { background: rgba(210,153,34,0.15); color: #d2991a; }
+    .tag-resources { background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .article-hero h1 { font-size: 2.2rem; color: #ffffff; line-height: 1.3; max-width: 780px; margin: 0 auto 16px; text-align: center; }
+    .article-hero .meta { color: #8b949e; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .content-wrap h2 { color: #ffffff; font-size: 1.4rem; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+    .content-wrap h3 { color: #e0e0e0; font-size: 1.1rem; margin: 28px 0 12px; }
+    .content-wrap p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .content-wrap ul, .content-wrap ol { color: #c9d1d9; padding-left: 24px; margin-bottom: 16px; }
+    .content-wrap li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content-wrap a { color: #58a6ff; text-decoration: none; }
+    .content-wrap a:hover { text-decoration: underline; }
+    .callout { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .warning { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.25); border-left: 4px solid #d2991a; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .warning p { margin: 0; color: #c9d1d9; }
+    .warning strong { color: #d2991a; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-top: 48px; font-size: 0.82rem; color: #8b949e; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; margin-top: 60px; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .header-left span { display: none; } .article-hero { padding: 40px 20px; } .article-hero h1 { font-size: 1.6rem; } .content-wrap { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="index.html"><h1>⚡ RootAccess</h1></a>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <a href="index.html" class="back">← Back to all articles</a>
+  <div class="tag tag-beginner">Beginner</div>
+  <h1>What is a Man-in-the-Middle (MitM) Attack? Understanding MitM Threats in 2026</h1>
+  <div class="meta">
+    <span>👤 Nate Bustos — Michigan Tech CS Student</span>
+    <span>📅 March 2026</span>
+    <span>⏱ 7 min read</span>
+  </div>
+</div>
+
+<div class="content-wrap">
+<p>Hey everyone, Nate Bustos here. As a Computer Science student at Michigan Tech, diving deep into cybersecurity with a minor in it, I spend a good chunk of my time on platforms like TryHackMe and participating in CTFs. This isn't just academic for me; it's about understanding how the digital world really works, and more importantly, how to stay safe in it.</p>
+
+<p>Today, we're talking about one of those core cybersecurity concepts that sounds intimidating but is surprisingly simple to grasp once you break it down: the Man-in-the-Middle (MitM) attack. And no, this isn't some abstract threat from a 90s hacker movie. MitM attacks are very real, very prevalent, and with the way our digital lives are evolving into 2026, understanding them is more critical than ever.</p>
+
+<p>Let's cut through the jargon and get to the truth about MitM threats. My goal here is to give you a solid, practical understanding so you can recognize the risks and take action.</p>
+
+<h2>What is a Man-in-the-Middle (MitM) Attack?</h2>
+
+<p>Imagine you're trying to whisper a secret to a friend across a crowded room. A Man-in-the-Middle attack is like someone secretly positioning themselves right between you and your friend, catching every word you say, possibly changing it, and then relaying it to your friend, all without either of you realizing it. That "man in the middle" is the attacker, and the "secret" is your digital communication.</p>
+
+<p>In cybersecurity terms, a MitM attack occurs when an attacker intercepts and potentially alters communication between two parties who believe they are communicating directly with each other. This interception happens without the knowledge or consent of either party. The attacker effectively inserts themselves into the conversation, acting as a proxy for both sides.</p>
+
+<div class="callout"><p><strong>Key Takeaway:</strong> A MitM attack means someone is secretly listening to (and possibly changing) your digital conversation, making you think you're talking directly to the intended party.</p></div>
+
+<p>The beauty (or horror, depending on your perspective) of a MitM attack is its stealth. The attacker's goal is to remain undetected while siphoning off sensitive information, injecting malicious code, or redirecting traffic. This can include anything from your login credentials and financial details to personal messages and company data.</p>
+
+<h2>How Do MitM Attacks Work? (Under the Hood)</h2>
+
+<p>Okay, so how does this digital eavesdropping actually happen? There are several common techniques attackers use to become the "man in the middle." I've seen these concepts pop up countless times in CTFs, so believe me, they're foundational.</p>
+
+<h3>ARP Spoofing</h3>
+<p>This is a classic for local network MitM attacks. ARP stands for Address Resolution Protocol. Think of it like a phonebook for your local network, mapping IP addresses (your device's unique identifier) to MAC addresses (your network card's hardware identifier). When your computer wants to talk to your router, it uses ARP to find the router's MAC address.</p>
+<p>In an ARP spoofing attack, the attacker floods the local network with fake ARP messages. These messages essentially tell your computer, "Hey, I'm the router!" and tell the router, "Hey, I'm your computer!" Both devices then start sending their traffic through the attacker's machine, believing it's the legitimate destination. This allows the attacker to see, and potentially modify, all unencrypted traffic.</p>
+<div class="warning"><p><strong>Reality Check:</strong> ARP spoofing typically only works on a local network (like your home Wi-Fi or a public hotspot). This is why public Wi-Fi without a VPN can be super risky.</p></div>
+
+<h3>DNS Spoofing / Cache Poisoning</h3>
+<p>DNS (Domain Name System) is the internet's phonebook, translating human-readable website names (like "google.com") into machine-readable IP addresses (like "172.217.160.142"). A DNS spoofing attack aims to trick your computer into thinking a malicious server is the legitimate one for a specific website.</p>
+<p>This can happen by corrupting your local DNS cache, or by the attacker intercepting your DNS requests and sending back a fake, malicious IP address. The result? You type in "yourbank.com," but your browser is secretly directed to an attacker's phishing site that looks identical, all while you're none the wiser.</p>
+
+<h3>SSL/TLS Stripping (Downgrade Attacks)</h3>
+<p>You know that little padlock and "HTTPS" in your browser's address bar? That indicates a secure, encrypted connection using SSL/TLS. It's supposed to prevent eavesdropping. An SSL/TLS stripping attack works by intercepting your initial connection request to a website that *should* be using HTTPS. The attacker then tricks your browser into connecting over an insecure HTTP connection instead of HTTPS.</p>
+<p>The attacker maintains an HTTPS connection with the legitimate website but talks to your browser over unencrypted HTTP. All your data, including login credentials, then travels in plain text between your browser and the attacker, making it ripe for interception. Many modern browsers and websites have countermeasures, but it's not foolproof, especially if you ignore warnings.</p>
+
+<h3>Rogue Wi-Fi Access Points</h3>
+<p>This is probably one of the most common and easiest MitM methods for attackers. They set up a fake Wi-Fi network that looks legitimate (e.g., "Free Airport Wi-Fi" or "Starbucks_Guest"). When you connect to this network, all your internet traffic passes through the attacker's device. They can then perform various other MitM techniques like DNS spoofing or SSL stripping on your connection.</p>
+<p>I've seen people fall for this in real life. It's shockingly effective because who doesn't love free Wi-Fi?</p>
+
+<h2>Why Should You Care? The Real-World Impact (2026 Context)</h2>
+
+<p>Beyond the technical nitty-gritty, why does this matter to you in 2026? Because our lives are increasingly digital, and the attack surface is only growing. Here's what's at stake:</p>
+<ul>
+    <li><strong>Data Theft:</strong> The most obvious. Your usernames, passwords, credit card numbers, personal identifiable information (PII) – all can be stolen. This leads to identity theft, financial fraud, and account compromises.</li>
+    <li><strong>Financial Fraud:</strong> Attackers can manipulate online banking transactions, redirect payments, or steal cryptocurrency if they intercept your communication.</li>
+    <li><strong>Malware Injection:</strong> An attacker can inject malicious code into legitimate websites or software updates as they pass through their intercepting point, compromising your device.</li>
+    <li><strong>Espionage:</strong> For businesses, governments, or even individuals, sensitive communications can be intercepted for competitive intelligence, political gain, or blackmail.</li>
+    <li><strong>IoT Vulnerabilities:</strong> With more smart home devices, wearables, and interconnected systems (the "Internet of Things"), the number of endpoints susceptible to MitM is skyrocketing. Many IoT devices have weak security, making them prime targets for interception.</li>
+    <li><strong>Remote Work & Hybrid Models:</strong> The shift to remote and hybrid work means more people are using less secure home networks or public Wi-Fi, increasing their exposure to MitM risks compared to being on a controlled corporate network.</li>
+</ul>
+
+<h2>Detecting a MitM Attack (It's Hard, But Possible)</h2>
+
+<p>MitM attacks are designed to be stealthy, so direct detection can be challenging for the average user. However, there are signs:</p>
+
+<h3>For Individuals:</h3>
+<ul>
+    <li><strong>Check for HTTPS and the Padlock:</strong> Always verify that websites handling sensitive data use HTTPS. If you navigate to a banking site and see "HTTP" or a broken padlock, immediately stop and close the page.</li>
+    <li><strong>Browser Warnings:</strong> Your browser is your first line of defense. If you encounter certificate errors ("Your connection is not private," "Potential security risk ahead"), don't just click through them. These often indicate a potential MitM attempt.</li>
+    <li><strong>Unexpected Redirects:</strong> If you type in a URL and are redirected to a different or slightly off-looking site, be suspicious.</li>
+    <li><strong>Slow Network Performance:</strong> While not a definitive sign, routing traffic through an attacker's machine can sometimes cause noticeable lag or connection issues.</li>
+</ul>
+
+<h3>For Organizations (Beyond Beginner Scope, But Good to Know):</h3>
+<ul>
+    <li>Network Intrusion Detection Systems (NIDS) and Intrusion Prevention Systems (IPS) can detect suspicious traffic patterns.</li>
+    <li>Endpoint Detection and Response (EDR) solutions can identify compromised devices.</li>
+    <li>Monitoring Certificate Transparency logs can reveal fraudulently issued certificates.</li>
+</ul>
+
+<div class="warning"><p><strong>Reality Check:</strong> Detecting an active, well-executed MitM attack as an individual user is extremely difficult. Prevention is your strongest defense.</p></div>
+
+<h2>Protecting Yourself from MitM Attacks</h2>
+
+<p>So, what can you do? A lot, actually. Here are the practical steps I preach:</p>
+<ul>
+    <li><strong>Always Use HTTPS:</strong> Make it a habit to check for the padlock and "HTTPS" in your browser's address bar, especially before entering any sensitive information. Most legitimate sites use it by default now, but it's crucial to verify.</li>
+    <li><strong>Use a Virtual Private Network (VPN):</strong> A reputable VPN encrypts your internet traffic from your device to the VPN server. Even if an attacker intercepts your traffic, all they'll see is encrypted gibberish, making MitM attacks ineffective for data theft. This is especially vital on public Wi-Fi.</li>
+    <li><strong>Avoid Public Wi-Fi for Sensitive Tasks:</strong> As mentioned, public Wi-Fi is a prime hunting ground for MitM attackers. If you absolutely must use public Wi-Fi, use a VPN for any banking, shopping, or logging into personal accounts.</li>
+    <li><strong>Update Software Regularly:</strong> Keep your operating system, web browsers, antivirus, and all applications updated. Patches often fix vulnerabilities that MitM attackers exploit.</li>
+    <li><strong>Use Strong, Unique Passwords and Multi-Factor Authentication (MFA):</strong> Even if your password is somehow intercepted, MFA (like a code from an authenticator app) provides an extra layer of security, making it much harder for an attacker to gain access.</li>
+    <li><strong>Be Wary of Browser Warnings:</strong> Do not click "proceed anyway" or "add exception" when your browser warns you about an insecure connection or a certificate error. These warnings are there for a reason!</li>
+    <li><strong>Secure Your Home Router:</strong> Change the default login credentials for your home router. Use a strong password and ensure WPA2 or WPA3 encryption is enabled for your Wi-Fi network.</li>
+</ul>
+
+<h2>Wrapping Up</h2>
+
+<p>Understanding MitM attacks isn't about fostering paranoia; it's about building awareness and making informed decisions in our increasingly connected world. As we move further into 2026, the sophistication of these attacks might grow, but so does our collective knowledge and the tools available for defense.</p>
+<p>By understanding how these attacks work and adopting strong security habits, you're not just protecting yourself; you're contributing to a safer digital ecosystem for everyone. Stay curious, stay vigilant, and keep learning!</p>
+
+<div class="callout"><p><strong>Next Steps:</strong> Check out TryHackMe's "Man-in-the-Middle" room to get hands-on experience (virtually, of course!). Consider investing in a reputable VPN service for added protection on public networks. Always question the security of your connection.</p></div>
+
+<div class="disclosure">
+  <strong>Disclosure:</strong> Some links on this page may be affiliate links. I may earn a small commission if you sign up through them, at no extra cost to you. I only recommend tools I genuinely think are worth using.
+</div>
+</div>
+
+<footer>
+  <div class="footer-brand">⚡ RootAccess</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+</body>
+</html>
