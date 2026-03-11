@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Best VPNs for beginners in 2026. Honest reviews from a cybersecurity student — what actually works, what's overhyped, and the best free options.">
+  <title>Best VPNs for Beginners in 2026 | RootAccess</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0e1a; color: #e0e0e0; line-height: 1.7; }
+    header { background: #0d1117; border-bottom: 1px solid #30363d; padding: 0 40px; height: 64px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left a { text-decoration: none; }
+    .header-left h1 { color: #58a6ff; font-size: 1.3rem; }
+    .header-left span { color: #8b949e; font-size: 0.8rem; border-left: 1px solid #30363d; padding-left: 12px; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: #8b949e; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: #58a6ff; }
+    .article-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #0d1f3c 100%); padding: 60px 40px; border-bottom: 1px solid #30363d; text-align: center; }
+    .article-hero .back { color: #58a6ff; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; opacity: 0.8; }
+    .article-hero .back:hover { opacity: 1; }
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .article-hero h1 { font-size: 2.2rem; color: #ffffff; line-height: 1.3; max-width: 780px; margin: 0 auto 16px; text-align: center; }
+    .article-hero .meta { color: #8b949e; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 60px 40px; }
+    .content-wrap h2 { color: #ffffff; font-size: 1.4rem; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #30363d; }
+    .content-wrap h3 { color: #e0e0e0; font-size: 1.1rem; margin: 28px 0 12px; }
+    .content-wrap p { color: #c9d1d9; margin-bottom: 16px; font-size: 0.97rem; }
+    .content-wrap ul, .content-wrap ol { color: #c9d1d9; padding-left: 24px; margin-bottom: 16px; }
+    .content-wrap li { margin-bottom: 8px; font-size: 0.97rem; }
+    .content-wrap a { color: #58a6ff; text-decoration: none; }
+    .content-wrap a:hover { text-decoration: underline; }
+    .callout { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.25); border-left: 4px solid #58a6ff; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin: 0; color: #c9d1d9; }
+    .callout strong { color: #58a6ff; }
+    .warning { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.25); border-left: 4px solid #d2991a; border-radius: 8px; padding: 20px 24px; margin: 28px 0; }
+    .warning p { margin: 0; color: #c9d1d9; }
+    .warning strong { color: #d2991a; }
+    .vpn-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 28px; margin: 20px 0; transition: border-color 0.2s; }
+    .vpn-card:hover { border-color: #58a6ff; }
+    .vpn-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px; }
+    .vpn-card h3 { color: #ffffff; font-size: 1.15rem; margin: 0; }
+    .vpn-badge { font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge-best { background: rgba(63,185,80,0.15); color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .badge-budget { background: rgba(88,166,255,0.15); color: #58a6ff; border: 1px solid rgba(88,166,255,0.3); }
+    .badge-free { background: rgba(210,153,34,0.15); color: #d2991a; border: 1px solid rgba(210,153,34,0.3); }
+    .vpn-card p { color: #8b949e; font-size: 0.9rem; margin-bottom: 14px; }
+    .vpn-pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+    .vpn-pros h4 { color: #3fb950; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .vpn-cons h4 { color: #f85149; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .vpn-pros ul, .vpn-cons ul { padding-left: 16px; color: #c9d1d9; font-size: 0.88rem; }
+    .vpn-pros li, .vpn-cons li { margin-bottom: 4px; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .comparison-table th { background: #161b22; color: #58a6ff; padding: 12px 16px; text-align: left; font-size: 0.88rem; border: 1px solid #30363d; }
+    .comparison-table td { padding: 12px 16px; border: 1px solid #30363d; color: #c9d1d9; font-size: 0.9rem; }
+    .comparison-table tr:nth-child(even) td { background: #0d1117; }
+    .disclosure { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-top: 48px; font-size: 0.82rem; color: #8b949e; }
+    footer { background: #0d1117; border-top: 1px solid #30363d; padding: 40px; text-align: center; color: #8b949e; font-size: 0.85rem; margin-top: 60px; }
+    footer .footer-brand { color: #58a6ff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+    @media (max-width: 600px) { header { padding: 0 20px; } .header-left span { display: none; } .article-hero { padding: 40px 20px; } .article-hero h1 { font-size: 1.6rem; } .content-wrap { padding: 40px 20px; } .vpn-pros-cons { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="index.html"><h1>⚡ RootAccess</h1></a>
+    <span>Free resources for security learners</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <a href="index.html" class="back">← Back to all articles</a>
+  <div class="tag">Comparison</div>
+  <h1>Best VPNs for Beginners in 2026</h1>
+  <div class="meta">
+    <span>👤 Nate Bustos — Michigan Tech CS Student</span>
+    <span>📅 March 2026</span>
+    <span>⏱ 7 min read</span>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <p>Everyone in cybersecurity has an opinion on VPNs. Some say they're essential. Some say they're overhyped. The truth is somewhere in the middle — and as a CS student who's tested a bunch of them, I'll give you the honest breakdown.</p>
+
+  <div class="callout">
+    <p><strong>Bottom line up front:</strong> For most beginners, NordVPN is the best paid option and Proton VPN is the best free option. Scroll down for the full breakdown and why.</p>
+  </div>
+
+  <h2>Do You Actually Need a VPN?</h2>
+  <p>Before spending money, understand what a VPN actually does. A VPN encrypts your internet traffic and masks your IP address. That's useful in specific situations — but it's not a magic shield.</p>
+  <p>You probably need a VPN if you:</p>
+  <ul>
+    <li>Use public WiFi regularly (coffee shops, airports, campus networks)</li>
+    <li>Want to hide your browsing from your ISP</li>
+    <li>Need to access geo-restricted content</li>
+    <li>Are doing security research and want to keep your home IP private</li>
+  </ul>
+  <p>If you're just browsing at home on a trusted network, a VPN is less critical. Read our full <a href="what-is-a-vpn.html">VPN explainer</a> if you want to understand the details before picking one.</p>
+
+  <div class="warning">
+    <p><strong>Reality check:</strong> A VPN does NOT make you anonymous. It moves trust from your ISP to your VPN provider. Pick one with a verified no-logs policy.</p>
+  </div>
+
+  <h2>Best VPNs for Beginners in 2026</h2>
+
+  <div class="vpn-card">
+    <div class="vpn-card-header">
+      <h3>🥇 NordVPN</h3>
+      <span class="vpn-badge badge-best">Best Overall</span>
+    </div>
+    <p>The most trusted name in consumer VPNs. Fast, reliable, and has passed multiple independent no-logs audits. The app is beginner-friendly and works on every device. This is the one I personally recommend to anyone starting out.</p>
+    <div class="vpn-pros-cons">
+      <div class="vpn-pros">
+        <h4>✓ Pros</h4>
+        <ul>
+          <li>Verified no-logs policy</li>
+          <li>6 simultaneous devices</li>
+          <li>3,000+ servers worldwide</li>
+          <li>Threat Protection built in</li>
+          <li>Fast speeds consistently</li>
+        </ul>
+      </div>
+      <div class="vpn-cons">
+        <h4>✗ Cons</h4>
+        <ul>
+          <li>Not free (from ~$3.39/mo)</li>
+          <li>2-year plan required for best price</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="vpn-card">
+    <div class="vpn-card-header">
+      <h3>🥈 Surfshark</h3>
+      <span class="vpn-badge badge-budget">Best Budget</span>
+    </div>
+    <p>The best value VPN right now. Unlimited simultaneous connections means you can cover every device you own on one subscription. Performance has improved a lot in 2025-2026 and it's now a legitimate alternative to NordVPN at a lower price.</p>
+    <div class="vpn-pros-cons">
+      <div class="vpn-pros">
+        <h4>✓ Pros</h4>
+        <ul>
+          <li>Unlimited device connections</li>
+          <li>Cheaper than NordVPN</li>
+          <li>CleanWeb ad blocker included</li>
+          <li>No-logs audited</li>
+        </ul>
+      </div>
+      <div class="vpn-cons">
+        <h4>✗ Cons</h4>
+        <ul>
+          <li>Speeds slightly behind NordVPN</li>
+          <li>Owned by Nord Security (same company)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="vpn-card">
+    <div class="vpn-card-header">
+      <h3>🥉 Proton VPN</h3>
+      <span class="vpn-badge badge-free">Best Free Option</span>
+    </div>
+    <p>The only free VPN I actually trust. Made by the same team behind ProtonMail, based in Switzerland, open source, and audited. The free tier has no data limits — just limited to 3 server locations and slower speeds. For a free VPN that doesn't sell your data, it's unbeatable.</p>
+    <div class="vpn-pros-cons">
+      <div class="vpn-pros">
+        <h4>✓ Pros</h4>
+        <ul>
+          <li>Genuinely free tier available</li>
+          <li>No data limits on free plan</li>
+          <li>Open source and audited</li>
+          <li>Swiss privacy laws</li>
+        </ul>
+      </div>
+      <div class="vpn-cons">
+        <h4>✗ Cons</h4>
+        <ul>
+          <li>Free tier limited to 3 locations</li>
+          <li>Slower speeds on free plan</li>
+          <li>Paid plan needed for full features</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Quick Comparison</h2>
+  <table class="comparison-table">
+    <tr>
+      <th>VPN</th>
+      <th>Price</th>
+      <th>Devices</th>
+      <th>Free Tier</th>
+      <th>Best For</th>
+    </tr>
+    <tr>
+      <td>NordVPN</td>
+      <td>From $3.39/mo</td>
+      <td>6</td>
+      <td>No</td>
+      <td>Best overall</td>
+    </tr>
+    <tr>
+      <td>Surfshark</td>
+      <td>From $2.19/mo</td>
+      <td>Unlimited</td>
+      <td>No</td>
+      <td>Best budget</td>
+    </tr>
+    <tr>
+      <td>Proton VPN</td>
+      <td>Free / $4.99/mo</td>
+      <td>1 (free) / 10</td>
+      <td>Yes</td>
+      <td>Free option</td>
+    </tr>
+  </table>
+
+  <h2>VPNs to Avoid</h2>
+  <p>Not all VPNs are created equal. Some free VPNs have been caught selling user data — which defeats the entire purpose.</p>
+  <ul>
+    <li><strong>Hola VPN</strong> — sells your bandwidth to other users. Avoid completely.</li>
+    <li><strong>SuperVPN / TurboVPN</strong> — multiple data leak incidents reported.</li>
+    <li><strong>Any VPN with no published audit</strong> — if they won't show their logs policy has been verified, don't trust them.</li>
+  </ul>
+
+  <div class="warning">
+    <p><strong>Rule of thumb:</strong> If a VPN is completely free with no paid tier, you are the product. Stick to Proton VPN if you need free — it's the rare exception that's actually trustworthy.</p>
+  </div>
+
+  <h2>VPNs for Cybersecurity Students Specifically</h2>
+  <p>If you're doing CTFs, pentesting labs, or security research, a VPN adds an extra layer of separation between your home IP and your lab traffic. NordVPN's Threat Protection feature also blocks malicious domains automatically — useful when you're poking around sketchy infrastructure for research purposes.</p>
+  <p>For running a pentest lab on DigitalOcean, pair it with a VPN to keep your personal IP out of server logs entirely.</p>
+
+  <h2>Final Verdict</h2>
+  <p>For most beginners the choice is simple: if you can spend a few dollars a month, go with NordVPN. If you need free, use Proton VPN. Skip everything else until you have a reason to look deeper.</p>
+
+  <div class="callout">
+    <p><strong>Your next step:</strong> If you're not sure whether you even need a VPN yet, read our <a href="what-is-a-vpn.html">What is a VPN</a> guide first. It'll help you decide before spending anything.</p>
+  </div>
+
+  <div class="disclosure">
+    <strong>Disclosure:</strong> Some links on this page may be affiliate links. I may earn a small commission if you sign up through them, at no extra cost to you. I only recommend tools I genuinely think are worth using.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">⚡ RootAccess</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="how-to-get-into-cybersecurity.html">Start Here</a>
+  </div>
+  <p>Built for the cybersecurity community by a Michigan Tech CS student.</p>
+  <p style="margin-top: 8px;">Some links are affiliate links — they help support this site at no extra cost to you.</p>
+</footer>
+
+</body>
+</html>
