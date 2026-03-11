@@ -365,7 +365,7 @@
   document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
 }
 
-function filterCards(category) {
+document.querySelectorAll('.card').forEach(card => {   card.addEventListener('click', function() {     const link = this.querySelector('.read-more');     if (link) window.location.href = link.href;   }); });  function filterCards(category) {
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
 
