@@ -139,4 +139,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://nbustos-dotcom.github.io/RootAccess/what-is-ai-powered-hacking.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nbustos-dotcom.github.io/RootAccess/what-is-zero-trust-security.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nbustos-dotcom.github.io/RootAccess/what-is-a-data-breach.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
